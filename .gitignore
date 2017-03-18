@@ -3,3 +3,4 @@ venv
 staticfiles
 .env
 .idea
+ng_laboratorio/node_modules
