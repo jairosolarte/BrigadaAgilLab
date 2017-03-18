@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    {% load static %}
+    <base href="/">
+    <title>Laboratorio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link id="favicon" rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/png" />
+
+
+    <link href="{{ ANGULAR_URL }}node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="{{ ANGULAR_URL }}app/app.component.css" rel="stylesheet" />
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="{{ ANGULAR_URL }}node_modules/core-js/client/shim.min.js"></script>
+    
+    <script src="{{ ANGULAR_URL }}node_modules/zone.js/dist/zone.js"></script>
+    <script src="{{ ANGULAR_URL }}node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="{{ ANGULAR_URL }}node_modules/systemjs/dist/system.src.js"></script>
+
+    <!-- Configure SystemJS -->
+    <script src="{{ ANGULAR_URL }}systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(
+          function(err){ console.error(err); }
+      );
+    </script>
+</head>
+
+<body>
+    <lab-app>Loading App...</lab-app>
+</body>
+
+</html>
