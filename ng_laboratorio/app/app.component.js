@@ -15,7 +15,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'lab-app',
-        template: "\n        <h1>Angular2: Getting Started</h1>\n    "
+        moduleId: module.id,
+        templateUrl: 'app.component.html'
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

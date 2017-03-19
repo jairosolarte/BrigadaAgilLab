@@ -136,3 +136,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ANGULAR_URL = '/lab/'
 ANGULAR_ROOT = os.path.join(BASE_DIR, 'ng_laboratorio/')
+
