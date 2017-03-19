@@ -11,7 +11,6 @@ var FooterComponent = (function () {
     function FooterComponent() {
         this.pageTitle = 'Welcome';
     }
-
     return FooterComponent;
 }());
 FooterComponent = __decorate([

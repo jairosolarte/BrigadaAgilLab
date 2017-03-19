@@ -11,7 +11,6 @@ var NavigationComponent = (function () {
     function NavigationComponent() {
         this.pageTitle = 'Welcome';
     }
-
     return NavigationComponent;
 }());
 NavigationComponent = __decorate([

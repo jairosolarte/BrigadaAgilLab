@@ -11,7 +11,6 @@ var TopNavBarComponent = (function () {
     function TopNavBarComponent() {
         this.pageTitle = 'Welcome';
     }
-
     return TopNavBarComponent;
 }());
 TopNavBarComponent = __decorate([
