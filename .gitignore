@@ -4,3 +4,4 @@ staticfiles
 .env
 .idea
 ng_laboratorio/node_modules
+ng_laboratorio/.vscode/

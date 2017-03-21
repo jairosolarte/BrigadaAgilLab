@@ -9,24 +9,28 @@
                                 <span class="block m-t-xs">
                                     <strong class="font-bold">Example user</strong>
                              </span>
-                                <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
+                                
                             </span>
                     </a>
-                    <ul uib-dropdown-menu="" class="animated fadeInRight m-t-xs">
-                        <li><a href="">Logout</a></li>
-                    </ul>
+                    
                 </div>
                 <div class="logo-element">
-                    IN+
+                    LAB
                 </div>
 
             </li>
 
             <li>
-                <a><i class="fa fa-laptop"></i> <span class="nav-label">Main page</span> </a>
+                <a [routerLink]="['/panel-control']"><i class="fa fa-bar-chart fa-lg fa-inverse"></i> <span class="nav-label">Inicio</span> </a>
             </li>
             <li>
-                <a><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
+                <a><i class="fa fa-cubes fa-lg fa-inverse"></i> <span class="nav-label">Inventario</span></a>
+            </li>
+            <li>
+                <a [routerLink]="['/proyectos']"><i class="fa fa-tachometer fa-lg fa-inverse"></i> <span class="nav-label">Proyectos</span></a>
+            </li>
+            <li>
+                <a [routerLink]="['/protocolos']"><i class="fa fa-flask fa-lg fa-inverse"></i> <span class="nav-label">Protocolos</span></a>
             </li>
         </ul>
 

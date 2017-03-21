@@ -2,19 +2,18 @@
 <html>
 
 <head lang="en">
-    {% load static %}
     <base href="/">
+    {% load static %}
     <title>Laboratorio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link id="favicon" rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/png"/>
+    <link id="favicon" rel="shortcut icon" href="{{ ANGULAR_URL }}favicon.png" type="image/png"/>
 
-    <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet">
-    <link href="{{ ANGULAR_URL }}node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
-    <link href="{{ ANGULAR_URL }}app/app.component.css" rel="stylesheet"/>
+    <link href="{{ ANGULAR_URL }}node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ ANGULAR_URL }}node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
-    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
-    <link id="loadBefore" href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{{ ANGULAR_URL }}node_modules/animate.css/animate.min.css" rel="stylesheet">
+    <link id="loadBefore" href="{{ ANGULAR_URL }}app/assets/css/style.css" rel="stylesheet">
 
     <!-- Polyfill(s) for older browsers -->
     <script src="{{ ANGULAR_URL }}node_modules/core-js/client/shim.min.js"></script>
@@ -24,7 +23,7 @@
     <script src="{{ ANGULAR_URL }}node_modules/systemjs/dist/system.src.js"></script>
 
     <!-- Configure SystemJS -->
-    <script src="{{ ANGULAR_URL }}systemjs.config.js"></script>
+    <script src="systemjs.config.django.js"></script>
     <script>
         System.import('app').catch(
             function (err) {
@@ -36,13 +35,24 @@
 
 <body>
 
-<lab-app>Loading App...</lab-app>
+    <lab-app>
+        <div class="container" style="padding-top: 150px;">
+            <div class="row">
+                <div class="col-lg-1 center-block" style="float: none;">
+
+                    <i class="fa fa-flask fa-5x fa-fw fa-inverse animated infinite bounce"></i>
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </lab-app>
+
 </body>
-<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/plugins/metisMenu/jquery.metisMenu.js' %}"></script>
-<script src="{% static 'js/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
-<script src="{% static 'js/inspinia.js' %}"></script>
-<script src="{% static 'js/plugins/pace/pace.min.js' %}"></script>
+<script src="{{ ANGULAR_URL }}node_modules/jquery/dist/jquery.min.js"></script>
+<script src="{{ ANGULAR_URL }}node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{ ANGULAR_URL }}node_modules/pace-progress/pace.min.js"></script>
+<script src="{{ ANGULAR_URL }}app/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="{{ ANGULAR_URL }}app/assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="{{ ANGULAR_URL }}app/assets/js/inspinia.js"></script>
 
 </html>

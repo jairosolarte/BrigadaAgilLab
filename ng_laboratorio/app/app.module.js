@@ -12,6 +12,10 @@ var app_component_1 = require("./app.component");
 var footer_component_1 = require("./layout/footer.component");
 var navigation_component_1 = require("./layout/navigation.component");
 var topnavbar_component_1 = require("./layout/topnavbar.component");
+var forms_1 = require("@angular/forms");
+var router_1 = require("@angular/router");
+var panel_control_component_1 = require("./panel-control/panel-control.component");
+var lab_module_1 = require("./lab/lab.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -19,11 +23,22 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            router_1.RouterModule.forRoot([
+                { path: 'panel-control', component: panel_control_component_1.PanelControlComponent },
+                { path: '', redirectTo: 'panel-control', pathMatch: 'full' },
+                { path: '**', redirectTo: 'panel-control', pathMatch: 'full' },
+            ]),
+            lab_module_1.LabModule,
+        ],
         declarations: [app_component_1.AppComponent,
             footer_component_1.FooterComponent,
             navigation_component_1.NavigationComponent,
-            topnavbar_component_1.TopNavBarComponent],
+            topnavbar_component_1.TopNavBarComponent,
+            panel_control_component_1.PanelControlComponent
+        ],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

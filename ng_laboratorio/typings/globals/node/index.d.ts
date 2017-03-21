@@ -12,20 +12,16 @@ interface ErrorConstructor {
 // compat for TypeScript 1.8
 // if you use with --target es3 or --target es5 and use below definitions,
 // use the lib.es6.d.ts that is bundled with TypeScript 1.8.
-interface MapConstructor {
-}
-interface WeakMapConstructor {
-}
-interface SetConstructor {
-}
-interface WeakSetConstructor {
-}
+interface MapConstructor { }
+interface WeakMapConstructor { }
+interface SetConstructor { }
+interface WeakSetConstructor { }
 
 /************************************************
- *                                               *
- *                   GLOBAL                      *
- *                                               *
- ************************************************/
+*                                               *
+*                   GLOBAL                      *
+*                                               *
+************************************************/
 declare var process: NodeJS.Process;
 declare var global: NodeJS.Global;
 
@@ -80,8 +76,7 @@ declare var SlowBuffer: {
 
 // Buffer class
 type BufferEncoding = "ascii" | "utf8" | "utf16le" | "ucs2" | "binary" | "hex";
-interface Buffer extends NodeBuffer {
-}
+interface Buffer extends NodeBuffer { }
 
 /**
  * Raw data is stored in instances of the Buffer class.
@@ -223,10 +218,10 @@ declare var Buffer: {
 };
 
 /************************************************
- *                                               *
- *               GLOBAL INTERFACES               *
- *                                               *
- ************************************************/
+*                                               *
+*               GLOBAL INTERFACES               *
+*                                               *
+************************************************/
 declare namespace NodeJS {
     export interface ErrnoException extends Error {
         errno?: number;
@@ -259,7 +254,7 @@ declare namespace NodeJS {
         setEncoding(encoding: string): void;
         pause(): ReadableStream;
         resume(): ReadableStream;
-        pipe<T extends WritableStream>(destination: T, options?: {end?: boolean;}): T;
+        pipe<T extends WritableStream>(destination: T, options?: { end?: boolean; }): T;
         unpipe<T extends WritableStream>(destination?: T): void;
         unshift(chunk: string): void;
         unshift(chunk: Buffer): void;
@@ -277,12 +272,11 @@ declare namespace NodeJS {
     }
 
     export interface ReadWriteStream extends ReadableStream, WritableStream {
-        pause(): ReadWriteStream;
-        resume(): ReadWriteStream;
+      pause(): ReadWriteStream;
+      resume(): ReadWriteStream;
     }
 
-    export interface Events extends EventEmitter {
-    }
+    export interface Events extends EventEmitter { }
 
     export interface Domain extends Events {
         run(fn: Function): void;
@@ -513,15 +507,15 @@ interface NodeBuffer extends Uint8Array {
 }
 
 /************************************************
- *                                               *
- *                   MODULES                     *
- *                                               *
- ************************************************/
+*                                               *
+*                   MODULES                     *
+*                                               *
+************************************************/
 declare module "buffer" {
     export var INSPECT_MAX_BYTES: number;
     var BuffType: typeof Buffer;
     var SlowBuffType: typeof SlowBuffer;
-    export {BuffType as Buffer, SlowBuffType as SlowBuffer};
+    export { BuffType as Buffer, SlowBuffType as SlowBuffer };
 }
 
 declare module "querystring" {
@@ -578,7 +572,7 @@ declare module "http" {
         socketPath?: string;
         method?: string;
         path?: string;
-        headers?: {[key: string]: any};
+        headers?: { [key: string]: any };
         auth?: string;
         agent?: Agent | boolean;
     }
@@ -679,8 +673,7 @@ declare module "http" {
     /**
      * @deprecated Use IncomingMessage
      */
-    export interface ClientResponse extends IncomingMessage {
-    }
+    export interface ClientResponse extends IncomingMessage { }
 
     export interface AgentOptions {
         /**
@@ -790,23 +783,15 @@ declare module "cluster" {
 
 declare module "zlib" {
     import * as stream from "stream";
-    export interface ZlibOptions { chunkSize?: number; windowBits?: number; level?: number; memLevel?: number; strategy?: number; dictionary?: any;
-    }
+    export interface ZlibOptions { chunkSize?: number; windowBits?: number; level?: number; memLevel?: number; strategy?: number; dictionary?: any; }
 
-    export interface Gzip extends stream.Transform {
-    }
-    export interface Gunzip extends stream.Transform {
-    }
-    export interface Deflate extends stream.Transform {
-    }
-    export interface Inflate extends stream.Transform {
-    }
-    export interface DeflateRaw extends stream.Transform {
-    }
-    export interface InflateRaw extends stream.Transform {
-    }
-    export interface Unzip extends stream.Transform {
-    }
+    export interface Gzip extends stream.Transform { }
+    export interface Gunzip extends stream.Transform { }
+    export interface Deflate extends stream.Transform { }
+    export interface Inflate extends stream.Transform { }
+    export interface DeflateRaw extends stream.Transform { }
+    export interface InflateRaw extends stream.Transform { }
+    export interface Unzip extends stream.Transform { }
 
     export function createGzip(options?: ZlibOptions): Gzip;
     export function createGunzip(options?: ZlibOptions): Gunzip;
@@ -899,8 +884,7 @@ declare module "os" {
     export function totalmem(): number;
     export function freemem(): number;
     export function cpus(): CpuInfo[];
-
-    export function networkInterfaces(): {[index: string]: NetworkInterfaceInfo[]};
+    export function networkInterfaces(): { [index: string]: NetworkInterfaceInfo[] };
     export var EOL: string;
 }
 
@@ -921,7 +905,7 @@ declare module "https" {
         requestCert?: boolean;
         rejectUnauthorized?: boolean;
         NPNProtocols?: any;
-        SNICallback?: (servername: string, cb: (err: Error, ctx: tls.SecureContext) => any) => any;
+        SNICallback?: (servername: string, cb:(err:Error,ctx:tls.SecureContext)=>any) => any;
     }
 
     export interface RequestOptions extends http.RequestOptions {
@@ -935,8 +919,7 @@ declare module "https" {
         secureProtocol?: string;
     }
 
-    export interface Agent extends http.Agent {
-    }
+    export interface Agent extends http.Agent { }
 
     export interface AgentOptions extends http.AgentOptions {
         pfx?: any;
@@ -953,8 +936,7 @@ declare module "https" {
     export var Agent: {
         new (options?: AgentOptions): Agent;
     };
-    export interface Server extends tls.Server {
-    }
+    export interface Server extends tls.Server { }
     export function createServer(options: ServerOptions, requestListener?: Function): Server;
     export function request(options: RequestOptions, callback?: (res: http.IncomingMessage) => void): http.ClientRequest;
     export function get(options: RequestOptions, callback?: (res: http.IncomingMessage) => void): http.ClientRequest;
@@ -1042,8 +1024,7 @@ declare module "readline" {
 }
 
 declare module "vm" {
-    export interface Context {
-    }
+    export interface Context { }
     export interface ScriptOptions {
         filename?: string;
         lineOffset?: number;
@@ -1307,7 +1288,7 @@ declare module "net" {
         setTimeout(timeout: number, callback?: Function): void;
         setNoDelay(noDelay?: boolean): void;
         setKeepAlive(enable?: boolean, initialDelay?: number): void;
-        address(): {port: number; family: string; address: string;};
+        address(): { port: number; family: string; address: string; };
         unref(): void;
         ref(): void;
 
@@ -1328,7 +1309,7 @@ declare module "net" {
     }
 
     export var Socket: {
-        new (options?: {fd?: string; type?: string; allowHalfOpen?: boolean;}): Socket;
+        new (options?: { fd?: string; type?: string; allowHalfOpen?: boolean; }): Socket;
     };
 
     export interface ListenOptions {
@@ -1350,7 +1331,7 @@ declare module "net" {
         listen(handle: any, listeningListener?: Function): Server;
         listen(options: ListenOptions, listeningListener?: Function): Server;
         close(callback?: Function): Server;
-        address(): {port: number; family: string; address: string;};
+        address(): { port: number; family: string; address: string; };
         getConnections(cb: (error: Error, count: number) => void): void;
         ref(): Server;
         unref(): Server;
@@ -1358,13 +1339,11 @@ declare module "net" {
         connections: number;
     }
     export function createServer(connectionListener?: (socket: Socket) => void): Server;
-    export function createServer(options?: {allowHalfOpen?: boolean;}, connectionListener?: (socket: Socket) => void): Server;
-
-    export function connect(options: {port: number, host?: string, localAddress?: string, localPort?: string, family?: number, allowHalfOpen?: boolean;}, connectionListener?: Function): Socket;
+    export function createServer(options?: { allowHalfOpen?: boolean; }, connectionListener?: (socket: Socket) => void): Server;
+    export function connect(options: { port: number, host?: string, localAddress?: string, localPort?: string, family?: number, allowHalfOpen?: boolean; }, connectionListener?: Function): Socket;
     export function connect(port: number, host?: string, connectionListener?: Function): Socket;
     export function connect(path: string, connectionListener?: Function): Socket;
-
-    export function createConnection(options: {port: number, host?: string, localAddress?: string, localPort?: string, family?: number, allowHalfOpen?: boolean;}, connectionListener?: Function): Socket;
+    export function createConnection(options: { port: number, host?: string, localAddress?: string, localPort?: string, family?: number, allowHalfOpen?: boolean; }, connectionListener?: Function): Socket;
     export function createConnection(port: number, host?: string, connectionListener?: Function): Socket;
     export function createConnection(path: string, connectionListener?: Function): Socket;
     export function isIP(input: string): number;
@@ -1495,9 +1474,8 @@ declare module "fs" {
     export function readlink(path: string | Buffer, callback?: (err: NodeJS.ErrnoException, linkString: string) => any): void;
     export function readlinkSync(path: string | Buffer): string;
     export function realpath(path: string | Buffer, callback?: (err: NodeJS.ErrnoException, resolvedPath: string) => any): void;
-    export function realpath(path: string | Buffer, cache: {[path: string]: string}, callback: (err: NodeJS.ErrnoException, resolvedPath: string) => any): void;
-
-    export function realpathSync(path: string | Buffer, cache?: {[path: string]: string}): string;
+    export function realpath(path: string | Buffer, cache: { [path: string]: string }, callback: (err: NodeJS.ErrnoException, resolvedPath: string) => any): void;
+    export function realpathSync(path: string | Buffer, cache?: { [path: string]: string }): string;
     /*
      * Asynchronous unlink - deletes the file specified in {path}
      *
@@ -1618,7 +1596,7 @@ declare module "fs" {
      * @param options An object with optional {encoding} and {flag} properties.  If {encoding} is specified, readFile returns a string; otherwise it returns a Buffer.
      * @param callback - The callback is passed two arguments (err, data), where data is the contents of the file.
      */
-    export function readFile(filename: string, options: {encoding: string; flag?: string;}, callback: (err: NodeJS.ErrnoException, data: string) => void): void;
+    export function readFile(filename: string, options: { encoding: string; flag?: string; }, callback: (err: NodeJS.ErrnoException, data: string) => void): void;
     /*
      * Asynchronous readFile - Asynchronously reads the entire contents of a file.
      *
@@ -1626,7 +1604,7 @@ declare module "fs" {
      * @param options An object with optional {encoding} and {flag} properties.  If {encoding} is specified, readFile returns a string; otherwise it returns a Buffer.
      * @param callback - The callback is passed two arguments (err, data), where data is the contents of the file.
      */
-    export function readFile(filename: string, options: {flag?: string;}, callback: (err: NodeJS.ErrnoException, data: Buffer) => void): void;
+    export function readFile(filename: string, options: { flag?: string; }, callback: (err: NodeJS.ErrnoException, data: Buffer) => void): void;
     /*
      * Asynchronous readFile - Asynchronously reads the entire contents of a file.
      *
@@ -1647,33 +1625,30 @@ declare module "fs" {
      * @param fileName
      * @param options An object with optional {encoding} and {flag} properties.  If {encoding} is specified, readFileSync returns a string; otherwise it returns a Buffer.
      */
-    export function readFileSync(filename: string, options: {encoding: string; flag?: string;}): string;
+    export function readFileSync(filename: string, options: { encoding: string; flag?: string; }): string;
     /*
      * Synchronous readFile - Synchronously reads the entire contents of a file.
      *
      * @param fileName
      * @param options An object with optional {encoding} and {flag} properties.  If {encoding} is specified, readFileSync returns a string; otherwise it returns a Buffer.
      */
-    export function readFileSync(filename: string, options?: {flag?: string;}): Buffer;
+    export function readFileSync(filename: string, options?: { flag?: string; }): Buffer;
     export function writeFile(filename: string, data: any, callback?: (err: NodeJS.ErrnoException) => void): void;
-    export function writeFile(filename: string, data: any, options: {encoding?: string; mode?: number; flag?: string;}, callback?: (err: NodeJS.ErrnoException) => void): void;
-    export function writeFile(filename: string, data: any, options: {encoding?: string; mode?: string; flag?: string;}, callback?: (err: NodeJS.ErrnoException) => void): void;
-
-    export function writeFileSync(filename: string, data: any, options?: {encoding?: string; mode?: number; flag?: string;}): void;
-    export function writeFileSync(filename: string, data: any, options?: {encoding?: string; mode?: string; flag?: string;}): void;
-
-    export function appendFile(filename: string, data: any, options: {encoding?: string; mode?: number; flag?: string;}, callback?: (err: NodeJS.ErrnoException) => void): void;
-    export function appendFile(filename: string, data: any, options: {encoding?: string; mode?: string; flag?: string;}, callback?: (err: NodeJS.ErrnoException) => void): void;
+    export function writeFile(filename: string, data: any, options: { encoding?: string; mode?: number; flag?: string; }, callback?: (err: NodeJS.ErrnoException) => void): void;
+    export function writeFile(filename: string, data: any, options: { encoding?: string; mode?: string; flag?: string; }, callback?: (err: NodeJS.ErrnoException) => void): void;
+    export function writeFileSync(filename: string, data: any, options?: { encoding?: string; mode?: number; flag?: string; }): void;
+    export function writeFileSync(filename: string, data: any, options?: { encoding?: string; mode?: string; flag?: string; }): void;
+    export function appendFile(filename: string, data: any, options: { encoding?: string; mode?: number; flag?: string; }, callback?: (err: NodeJS.ErrnoException) => void): void;
+    export function appendFile(filename: string, data: any, options: { encoding?: string; mode?: string; flag?: string; }, callback?: (err: NodeJS.ErrnoException) => void): void;
     export function appendFile(filename: string, data: any, callback?: (err: NodeJS.ErrnoException) => void): void;
-
-    export function appendFileSync(filename: string, data: any, options?: {encoding?: string; mode?: number; flag?: string;}): void;
-    export function appendFileSync(filename: string, data: any, options?: {encoding?: string; mode?: string; flag?: string;}): void;
+    export function appendFileSync(filename: string, data: any, options?: { encoding?: string; mode?: number; flag?: string; }): void;
+    export function appendFileSync(filename: string, data: any, options?: { encoding?: string; mode?: string; flag?: string; }): void;
     export function watchFile(filename: string, listener: (curr: Stats, prev: Stats) => void): void;
-    export function watchFile(filename: string, options: {persistent?: boolean; interval?: number;}, listener: (curr: Stats, prev: Stats) => void): void;
+    export function watchFile(filename: string, options: { persistent?: boolean; interval?: number; }, listener: (curr: Stats, prev: Stats) => void): void;
     export function unwatchFile(filename: string, listener?: (curr: Stats, prev: Stats) => void): void;
     export function watch(filename: string, listener?: (event: string, filename: string) => any): FSWatcher;
     export function watch(filename: string, encoding: string, listener?: (event: string, filename: string | Buffer) => any): FSWatcher;
-    export function watch(filename: string, options: {persistent?: boolean; recursive?: boolean; encoding?: string}, listener?: (event: string, filename: string | Buffer) => any): FSWatcher;
+    export function watch(filename: string, options: { persistent?: boolean; recursive?: boolean; encoding?: string }, listener?: (event: string, filename: string | Buffer) => any): FSWatcher;
     export function exists(path: string | Buffer, callback?: (exists: boolean) => void): void;
     export function existsSync(path: string | Buffer): boolean;
     /** Constant for fs.access(). File is visible to the calling process. */
@@ -1914,7 +1889,7 @@ declare module "tls" {
          * the operating system.
          * @returns {any} - An object with three properties, e.g. { port: 12346, family: 'IPv4', address: '127.0.0.1' }.
          */
-        address(): {port: number; family: string; address: string};
+        address(): { port: number; family: string; address: string };
         /**
          * A boolean that is true if the peer certificate was signed by one of the specified CAs, otherwise false.
          */
@@ -2024,7 +1999,7 @@ declare module "tls" {
         requestCert?: boolean;
         rejectUnauthorized?: boolean;
         NPNProtocols?: any;  //array or Buffer;
-        SNICallback?: (servername: string, cb: (err: Error, ctx: SecureContext) => any) => any;
+        SNICallback?: (servername: string, cb:(err:Error,ctx:SecureContext)=>any) => any;
     }
 
     export interface ConnectionOptions {
@@ -2043,7 +2018,7 @@ declare module "tls" {
 
     export interface Server extends net.Server {
         close(): Server;
-        address(): {port: number; family: string; address: string;};
+        address(): { port: number; family: string; address: string; };
         addContext(hostName: string, credentials: {
             key: string;
             cert: string;
@@ -2108,8 +2083,7 @@ declare module "crypto" {
         crl: string | string[];
         ciphers: string;
     }
-    export interface Credentials { context?: any;
-    }
+    export interface Credentials { context?: any; }
     export function createCredentials(details: CredentialDetails): Credentials;
     export function createHash(algorithm: string): Hash;
     export function createHmac(algorithm: string, key: string): Hmac;
@@ -2201,7 +2175,7 @@ declare module "stream" {
     import * as events from "events";
 
     export class Stream extends events.EventEmitter {
-        pipe<T extends NodeJS.WritableStream>(destination: T, options?: {end?: boolean;}): T;
+        pipe<T extends NodeJS.WritableStream>(destination: T, options?: { end?: boolean; }): T;
     }
 
     export interface ReadableOptions {
@@ -2219,8 +2193,7 @@ declare module "stream" {
         setEncoding(encoding: string): void;
         pause(): Readable;
         resume(): Readable;
-
-        pipe<T extends NodeJS.WritableStream>(destination: T, options?: {end?: boolean;}): T;
+        pipe<T extends NodeJS.WritableStream>(destination: T, options?: { end?: boolean; }): T;
         unpipe<T extends NodeJS.WritableStream>(destination?: T): void;
         unshift(chunk: any): void;
         wrap(oldStream: NodeJS.ReadableStream): NodeJS.ReadableStream;
@@ -2284,8 +2257,7 @@ declare module "stream" {
         setEncoding(encoding: string): void;
         pause(): Transform;
         resume(): Transform;
-
-        pipe<T extends NodeJS.WritableStream>(destination: T, options?: {end?: boolean;}): T;
+        pipe<T extends NodeJS.WritableStream>(destination: T, options?: { end?: boolean; }): T;
         unpipe<T extends NodeJS.WritableStream>(destination?: T): void;
         unshift(chunk: any): void;
         wrap(oldStream: NodeJS.ReadableStream): NodeJS.ReadableStream;
@@ -2297,8 +2269,7 @@ declare module "stream" {
         end(chunk: any, encoding?: string, cb?: Function): void;
     }
 
-    export class PassThrough extends Transform {
-    }
+    export class PassThrough extends Transform { }
 }
 
 declare module "util" {
