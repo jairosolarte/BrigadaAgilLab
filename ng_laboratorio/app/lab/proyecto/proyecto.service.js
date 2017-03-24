@@ -7,9 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var proyecto_list_1 = require("./proyecto.list");
 var ProyectoService = (function () {
     function ProyectoService() {
     }
+    ProyectoService.prototype.getProyectos = function () {
+        return Promise.resolve(proyecto_list_1.PROYECTOS);
+    };
     return ProyectoService;
 }());
 ProyectoService = __decorate([

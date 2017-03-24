@@ -31,13 +31,13 @@ AppModule = __decorate([
                 { path: '', redirectTo: 'panel-control', pathMatch: 'full' },
                 { path: '**', redirectTo: 'panel-control', pathMatch: 'full' },
             ]),
-            lab_module_1.LabModule,
+            lab_module_1.LabModule
         ],
         declarations: [app_component_1.AppComponent,
             footer_component_1.FooterComponent,
             navigation_component_1.NavigationComponent,
             topnavbar_component_1.TopNavBarComponent,
-            panel_control_component_1.PanelControlComponent
+            panel_control_component_1.PanelControlComponent,
         ],
         bootstrap: [app_component_1.AppComponent]
     })

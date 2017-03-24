@@ -9,6 +9,9 @@ import {RouterModule} from "@angular/router";
 import { PanelControlComponent } from "./panel-control/panel-control.component";
 import { LabModule } from "./lab/lab.module";
 
+
+
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -18,13 +21,15 @@ import { LabModule } from "./lab/lab.module";
             {path: '', redirectTo: 'panel-control', pathMatch:'full'},
             {path: '**', redirectTo: 'panel-control', pathMatch:'full'},
         ]),
-        LabModule,
+        LabModule
+
     ],
     declarations: [AppComponent,
         FooterComponent,
         NavigationComponent,
         TopNavBarComponent,
-        PanelControlComponent
+        PanelControlComponent,
+
     ],
     bootstrap: [AppComponent]
 })
