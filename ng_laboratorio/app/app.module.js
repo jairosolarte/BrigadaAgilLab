@@ -16,6 +16,8 @@ var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var panel_control_component_1 = require("./panel-control/panel-control.component");
 var lab_module_1 = require("./lab/lab.module");
+var panel_asistente_component_1 = require("./panel-control/panel-asistente.component");
+var panel_cientifico_component_1 = require("./panel-control/panel-cientifico.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,6 +40,8 @@ AppModule = __decorate([
             navigation_component_1.NavigationComponent,
             topnavbar_component_1.TopNavBarComponent,
             panel_control_component_1.PanelControlComponent,
+            panel_cientifico_component_1.PanelCientificoComponent,
+            panel_asistente_component_1.PanelAsistenteComponent,
         ],
         bootstrap: [app_component_1.AppComponent]
     })

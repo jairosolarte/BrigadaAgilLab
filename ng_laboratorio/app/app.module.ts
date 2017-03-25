@@ -8,8 +8,8 @@ import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { PanelControlComponent } from "./panel-control/panel-control.component";
 import { LabModule } from "./lab/lab.module";
-
-
+import { PanelAsistenteComponent } from "./panel-control/panel-asistente.component";
+import { PanelCientificoComponent } from "./panel-control/panel-cientifico.component";
 
 
 @NgModule({
@@ -29,6 +29,8 @@ import { LabModule } from "./lab/lab.module";
         NavigationComponent,
         TopNavBarComponent,
         PanelControlComponent,
+        PanelCientificoComponent,
+        PanelAsistenteComponent,
 
     ],
     bootstrap: [AppComponent]

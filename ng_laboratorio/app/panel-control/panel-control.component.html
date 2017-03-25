@@ -1,12 +1,22 @@
-        <div class="wrapper wrapper-content animated fadeInRight">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center m-t-lg">
-                        <h1>
-                            Panel de Control
-                        </h1>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-6">
 
-                    </div>
+            <div class="ibox-content">
+                <div class="form-group">
+                    <label class="control-label">Seleccionar Perfil</label>
+
+                    <select [(ngModel)]="panelSeleccionado" class="form-control m-b">
+                        <option value="jefe">Jefe de Laboratorio</option>
+                        <option value="cientifico">Científico</option>
+                        <option value="asistente">Asistente de Investigación</option>
+                    </select>
+
                 </div>
             </div>
         </div>
+
+    </div>
+</div>
+<lab-panel-cientifico *ngIf='panelSeleccionado=="cientifico"'></lab-panel-cientifico>
+<lab-panel-asistente *ngIf='panelSeleccionado=="asistente"'></lab-panel-asistente>
