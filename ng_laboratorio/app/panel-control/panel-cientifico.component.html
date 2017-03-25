@@ -1,32 +1,18 @@
 <div class="row">
-    <div class="col-lg-12">
-        <div class="text-center m-t-lg">
-            <h1>
-                Panel de Control - Cientifico
-            </h1>
 
-        </div>
-    </div>
-</div>
-<div class="row">
-
-    <div class="col-lg-12">
+    <div class="col-sm-12 col-lg-6">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
                 <h5>Proyectos En ejecucion </h5>
-                <div class="ibox-tools">
-                    <a class="collapse-link">
-                        <i class="fa fa-chevron-up"></i>
-                    </a>
-                </div>
+                <ui-ibox-tools [collapse]='true'></ui-ibox-tools>
             </div>
             <div class="ibox-content">
                 <!-- TODO mover todo el contenido al componente de proyectos -->
                 <div class="row">
-                    <div class="col-sm-9 m-b-xs">
-                    
+                    <div class="col-sm-7 m-b-xs">
+
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                         <div class="input-group">
                             <input placeholder="Filtrar" class="input-sm form-control" type="text">
                             <span class="input-group-btn">
@@ -50,11 +36,9 @@
                                 <td>Project <small>This is example of project</small></td>
                                 <td>01 Ene 2017</td>
                                 <td><span class="pie" style="display: none;">0.52/1.561</span>
-                                    <svg class="peity" height="16"
-                                        width="16">
+                                    <svg class="peity" height="16" width="16">
                                         <path d="M 8 8 L 8 0 A 8 8 0 0 1 14.933563796318165 11.990700825968545 Z" fill="#1ab394"></path>
-                                        <path d="M 8 8 L 14.933563796318165 11.990700825968545 A 8 8 0 1 1 7.999999999999998 0 Z"
-                                            fill="#d7d7d7"></path>
+                                        <path d="M 8 8 L 14.933563796318165 11.990700825968545 A 8 8 0 1 1 7.999999999999998 0 Z" fill="#d7d7d7"></path>
                                     </svg>
                                 </td>
                                 <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
@@ -65,8 +49,7 @@
                                 <td><span class="pie" style="display: none;">6,9</span>
                                     <svg class="peity" height="16" width="16">
                                         <path d="M 8 8 L 8 0 A 8 8 0 0 1 12.702282018339785 14.47213595499958 Z" fill="#1ab394"></path>
-                                        <path d="M 8 8 L 12.702282018339785 14.47213595499958 A 8 8 0 1 1 7.999999999999998 0 Z"
-                                            fill="#d7d7d7"></path>
+                                        <path d="M 8 8 L 12.702282018339785 14.47213595499958 A 8 8 0 1 1 7.999999999999998 0 Z" fill="#d7d7d7"></path>
                                     </svg>
                                 </td>
                                 <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
@@ -89,5 +72,37 @@
             </div>
         </div>
     </div>
+    <div class="col-sm-12 col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Solicitudes de Insumos por Aprobar</h5>
+                <ui-ibox-tools [collapse]='true'></ui-ibox-tools>
+            </div>
+            <div class="ibox-content">
+                <div class="feed-activity-list">
 
+                    <div class="feed-element">
+                        <div>
+                            <strong>Insumo</strong>
+                            <div><strong>Solicitado por: </strong> dasdasdas</div>
+                            <div><strong>Proyecto: </strong>NOMBRE_PROYECTO - <strong>Experimento: </strong>EXPERIMENTO</div>
+                            <div><strong>Cantidad: </strong> 20 gr</div>
+                            <small class="text-muted">Today 5:60 pm - 25.05.2017</small>
+                        </div>
+                    </div>
+
+                    <div class="feed-element">
+                        <div>
+                            <strong>Insumo</strong>
+                            <div><strong>Solicitado por: </strong> dasdasdas</div>
+                            <div><strong>Proyecto: </strong>NOMBRE_PROYECTO - <strong>Experimento: </strong>EXPERIMENTO</div>
+                            <div><strong>Cantidad: </strong> 20 gr</div>
+                            <small class="text-muted">Today 5:60 pm - 25.05.2017</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

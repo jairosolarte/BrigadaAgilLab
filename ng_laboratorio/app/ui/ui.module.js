@@ -6,20 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/**
- * Created by alejandroquintero on 23/03/17.
- */
 var core_1 = require("@angular/core");
-var PanelControlComponent = (function () {
-    function PanelControlComponent() {
+var forms_1 = require("@angular/forms");
+var common_1 = require("@angular/common");
+var ibox_tools_component_1 = require("./ibox-tools.component");
+var UIModule = (function () {
+    function UIModule() {
     }
-    return PanelControlComponent;
+    return UIModule;
 }());
-PanelControlComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: 'cientifico.component.html'
+UIModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule,
+            forms_1.FormsModule,
+        ],
+        declarations: [
+            ibox_tools_component_1.iBoxToolsComponent,
+        ],
+        exports: [
+            ibox_tools_component_1.iBoxToolsComponent,
+        ]
     })
-], PanelControlComponent);
-exports.PanelControlComponent = PanelControlComponent;
-//# sourceMappingURL=cientifico.component.js.map
+], UIModule);
+exports.UIModule = UIModule;
+//# sourceMappingURL=ui.module.js.map
