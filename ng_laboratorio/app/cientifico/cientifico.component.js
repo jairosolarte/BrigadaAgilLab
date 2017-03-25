@@ -6,18 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Created by alejandroquintero on 23/03/17.
+ */
 var core_1 = require("@angular/core");
 var PanelControlComponent = (function () {
     function PanelControlComponent() {
-        this.panelSeleccionado = 'cientifico';
     }
     return PanelControlComponent;
 }());
 PanelControlComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        templateUrl: 'panel-control.component.html'
+        templateUrl: 'cientifico.component.html'
     })
 ], PanelControlComponent);
 exports.PanelControlComponent = PanelControlComponent;
-//# sourceMappingURL=panel-control.component.js.map
+//# sourceMappingURL=cientifico.component.js.map

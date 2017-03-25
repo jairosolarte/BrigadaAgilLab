@@ -5,6 +5,6 @@ import {Component} from "@angular/core";
     templateUrl: 'panel-control.component.html'
 })
 export class PanelControlComponent {
-    panelSeleccionado = '';
+    panelSeleccionado = 'cientifico';
     
 }

@@ -1,4 +1,4 @@
-<div class="wrapper wrapper-content animated fadeInRight">
+<div class="wrapper wrapper-content animated fadeIn">
     <div class="row">
         <div class="col-lg-6">
 
@@ -17,6 +17,6 @@
         </div>
 
     </div>
+    <lab-panel-cientifico *ngIf='panelSeleccionado=="cientifico"'></lab-panel-cientifico>
+    <lab-panel-asistente *ngIf='panelSeleccionado=="asistente"'></lab-panel-asistente>
 </div>
-<lab-panel-cientifico *ngIf='panelSeleccionado=="cientifico"'></lab-panel-cientifico>
-<lab-panel-asistente *ngIf='panelSeleccionado=="asistente"'></lab-panel-asistente>
