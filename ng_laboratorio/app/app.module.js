@@ -43,12 +43,9 @@ AppModule = __decorate([
             navigation_component_1.NavigationComponent,
             topnavbar_component_1.TopNavBarComponent,
             panel_control_component_1.PanelControlComponent,
-<<<<<<< HEAD
-            panel_control_jefe_component_1.PanelControlComponentJefe
-=======
+            panel_control_jefe_component_1.PanelControlComponentJefe,
             panel_cientifico_component_1.PanelCientificoComponent,
             panel_asistente_component_1.PanelAsistenteComponent,
->>>>>>> 9cae03b1376df77dc540b01c43873a0f24c61a4c
         ],
         bootstrap: [app_component_1.AppComponent]
     })

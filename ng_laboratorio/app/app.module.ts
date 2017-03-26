@@ -37,5 +37,4 @@ import { PanelCientificoComponent } from "./panel-control/panel-cientifico.compo
     ],
     bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

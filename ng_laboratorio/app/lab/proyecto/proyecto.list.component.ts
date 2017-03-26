@@ -18,6 +18,4 @@ export class ProyectoListComponent implements OnInit{
     ngOnInit():any{
       this.getProyectos();
    }
-
-
 }
