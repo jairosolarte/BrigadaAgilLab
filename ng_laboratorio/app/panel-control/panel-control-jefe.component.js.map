@@ -1,0 +1,1 @@
+{"version":3,"file":"panel-control-jefe.component.js","sourceRoot":"","sources":["panel-control-jefe.component.ts"],"names":[],"mappings":";;;;;;;;AAAA;;GAEG;AACH,sCAAwC;AAOxC,IAAa,yBAAyB;IAAtC;IAEA,CAAC;IAAD,gCAAC;AAAD,CAAC,AAFD,IAEC;AAFY,yBAAyB;IALrC,gBAAS,CAAC;QACP,QAAQ,EAAE,WAAW;QACrB,QAAQ,EAAE,MAAM,CAAC,EAAE;QACnB,WAAW,EAAE,mCAAmC;KACnD,CAAC;GACW,yBAAyB,CAErC;AAFY,8DAAyB"}

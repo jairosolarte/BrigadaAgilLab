@@ -7,6 +7,7 @@ import {TopNavBarComponent} from "./layout/topnavbar.component";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { PanelControlComponent } from "./panel-control/panel-control.component";
+import { PanelControlComponentJefe } from "./panel-control/panel-control-jefe.component";
 import { LabModule } from "./lab/lab.module";
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LabModule } from "./lab/lab.module";
         FooterComponent,
         NavigationComponent,
         TopNavBarComponent,
-        PanelControlComponent
+        PanelControlComponent,
+        PanelControlComponentJefe
     ],
     bootstrap: [AppComponent]
 })
