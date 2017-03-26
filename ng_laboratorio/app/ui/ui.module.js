@@ -7,17 +7,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var PanelControlComponent = (function () {
-    function PanelControlComponent() {
-        this.panelSeleccionado = 'cientifico';
+var forms_1 = require("@angular/forms");
+var common_1 = require("@angular/common");
+var ibox_tools_component_1 = require("./ibox-tools.component");
+var UIModule = (function () {
+    function UIModule() {
     }
-    return PanelControlComponent;
+    return UIModule;
 }());
-PanelControlComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: 'panel-control.component.html'
+UIModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule,
+            forms_1.FormsModule,
+        ],
+        declarations: [
+            ibox_tools_component_1.iBoxToolsComponent,
+        ],
+        exports: [
+            ibox_tools_component_1.iBoxToolsComponent,
+        ]
     })
-], PanelControlComponent);
-exports.PanelControlComponent = PanelControlComponent;
-//# sourceMappingURL=panel-control.component.js.map
+], UIModule);
+exports.UIModule = UIModule;
+//# sourceMappingURL=ui.module.js.map

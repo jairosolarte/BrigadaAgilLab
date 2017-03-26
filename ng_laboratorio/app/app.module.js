@@ -17,6 +17,9 @@ var router_1 = require("@angular/router");
 var panel_control_component_1 = require("./panel-control/panel-control.component");
 var panel_control_jefe_component_1 = require("./panel-control/panel-control-jefe.component");
 var lab_module_1 = require("./lab/lab.module");
+var ui_module_1 = require("./ui/ui.module");
+var panel_asistente_component_1 = require("./panel-control/panel-asistente.component");
+var panel_cientifico_component_1 = require("./panel-control/panel-cientifico.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,13 +36,19 @@ AppModule = __decorate([
                 { path: '**', redirectTo: 'panel-control', pathMatch: 'full' },
             ]),
             lab_module_1.LabModule,
+            ui_module_1.UIModule,
         ],
         declarations: [app_component_1.AppComponent,
             footer_component_1.FooterComponent,
             navigation_component_1.NavigationComponent,
             topnavbar_component_1.TopNavBarComponent,
             panel_control_component_1.PanelControlComponent,
+<<<<<<< HEAD
             panel_control_jefe_component_1.PanelControlComponentJefe
+=======
+            panel_cientifico_component_1.PanelCientificoComponent,
+            panel_asistente_component_1.PanelAsistenteComponent,
+>>>>>>> 9cae03b1376df77dc540b01c43873a0f24c61a4c
         ],
         bootstrap: [app_component_1.AppComponent]
     })

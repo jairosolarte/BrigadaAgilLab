@@ -12,7 +12,9 @@ var protocolo_service_1 = require("./protocolo/protocolo.service");
 var muestra_service_1 = require("./muestra/muestra.service");
 var experimento_service_1 = require("./experimento/experimento.service");
 var forms_1 = require("@angular/forms");
+var common_1 = require("@angular/common");
 var proyecto_component_1 = require("./proyecto/proyecto.component");
+var proyecto_list_component_1 = require("./proyecto/proyecto.list.component");
 var router_1 = require("@angular/router");
 var protocolo_component_1 = require("./protocolo/protocolo.component");
 var LabModule = (function () {
@@ -23,6 +25,7 @@ var LabModule = (function () {
 LabModule = __decorate([
     core_1.NgModule({
         imports: [
+            common_1.CommonModule,
             forms_1.FormsModule,
             router_1.RouterModule.forChild([
                 { path: 'proyectos', component: proyecto_component_1.ProyectoComponent },
@@ -32,12 +35,13 @@ LabModule = __decorate([
         declarations: [
             proyecto_component_1.ProyectoComponent,
             protocolo_component_1.ProtocoloComponent,
+            proyecto_list_component_1.ProyectoListComponent,
         ],
         providers: [
             proyecto_service_1.ProyectoService,
             protocolo_service_1.ProtocoloService,
             muestra_service_1.MuestraService,
-            experimento_service_1.ExperimentoService
+            experimento_service_1.ExperimentoService,
         ]
     })
 ], LabModule);

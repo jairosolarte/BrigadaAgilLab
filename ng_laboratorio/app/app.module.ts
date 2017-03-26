@@ -9,6 +9,10 @@ import {RouterModule} from "@angular/router";
 import { PanelControlComponent } from "./panel-control/panel-control.component";
 import { PanelControlComponentJefe } from "./panel-control/panel-control-jefe.component";
 import { LabModule } from "./lab/lab.module";
+import { UIModule } from "./ui/ui.module";
+import { PanelAsistenteComponent } from "./panel-control/panel-asistente.component";
+import { PanelCientificoComponent } from "./panel-control/panel-cientifico.component";
+
 
 @NgModule({
     imports: [
@@ -20,13 +24,16 @@ import { LabModule } from "./lab/lab.module";
             {path: '**', redirectTo: 'panel-control', pathMatch:'full'},
         ]),
         LabModule,
+        UIModule,
     ],
     declarations: [AppComponent,
         FooterComponent,
         NavigationComponent,
         TopNavBarComponent,
         PanelControlComponent,
-        PanelControlComponentJefe
+        PanelControlComponentJefe,
+        PanelCientificoComponent,
+        PanelAsistenteComponent,
     ],
     bootstrap: [AppComponent]
 })

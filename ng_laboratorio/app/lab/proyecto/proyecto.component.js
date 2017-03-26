@@ -15,7 +15,7 @@ var ProyectoComponent = (function () {
 ProyectoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        templateUrl: 'proyecto.component.html'
+        templateUrl: 'proyecto.component.html',
     })
 ], ProyectoComponent);
 exports.ProyectoComponent = ProyectoComponent;
