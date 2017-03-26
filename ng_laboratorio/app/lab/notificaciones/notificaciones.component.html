@@ -1,0 +1,21 @@
+<div class="ibox-content">
+    <div class="feed-activity-list">
+
+        <div class="feed-element" *ngFor='let notificacion of notificaciones'>
+            <div id="notif-{{notificacion.id}}" class="media-body" *ngIf='notificacion.tipo=="Insumo"'>
+                <small class="pull-right">{{notificacion.timestamp | date:'fullDate'}}</small>
+                <div>
+                    <h5 style="display: inline">{{notificacion.titulo}} - </h5>
+                    <span class="label label-primary"> {{notificacion.campos.cantidad}} </span>
+                </div>
+                <div class="m-t-sm">
+                    <strong>Proyecto: </strong> {{notificacion.proyecto}} - <strong>Experimento: </strong> {{notificacion.experimento}}
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-sm btn-primary m-t-n-lg">Aprovar</button>
+                        <button type="submit" class="btn btn-sm btn-danger m-t-n-lg">Rechazar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
