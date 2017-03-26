@@ -17,6 +17,9 @@ var proyecto_component_1 = require("./proyecto/proyecto.component");
 var proyecto_list_component_1 = require("./proyecto/proyecto.list.component");
 var router_1 = require("@angular/router");
 var protocolo_component_1 = require("./protocolo/protocolo.component");
+var notificaciones_component_1 = require("./notificaciones/notificaciones.component");
+var notificaciones_service_1 = require("./notificaciones/notificaciones.service");
+var keys_pipe_1 = require("./keys.pipe");
 var LabModule = (function () {
     function LabModule() {
     }
@@ -36,12 +39,18 @@ LabModule = __decorate([
             proyecto_component_1.ProyectoComponent,
             protocolo_component_1.ProtocoloComponent,
             proyecto_list_component_1.ProyectoListComponent,
+            notificaciones_component_1.NotificacionesComponent,
+            keys_pipe_1.KeysPipe,
+        ],
+        exports: [
+            notificaciones_component_1.NotificacionesComponent,
         ],
         providers: [
             proyecto_service_1.ProyectoService,
             protocolo_service_1.ProtocoloService,
             muestra_service_1.MuestraService,
             experimento_service_1.ExperimentoService,
+            notificaciones_service_1.NotificacionesService,
         ]
     })
 ], LabModule);

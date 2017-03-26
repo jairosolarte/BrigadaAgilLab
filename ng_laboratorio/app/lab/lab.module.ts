@@ -9,28 +9,37 @@ import { ProyectoComponent } from "./proyecto/proyecto.component";
 import { ProyectoListComponent } from "./proyecto/proyecto.list.component";
 import { RouterModule } from "@angular/router";
 import { ProtocoloComponent } from "./protocolo/protocolo.component";
-
+import { NotificacionesComponent } from "./notificaciones/notificaciones.component"
+import { NotificacionesService } from "./notificaciones/notificaciones.service";
+import { KeysPipe } from "./keys.pipe";
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         RouterModule.forChild([
-            {path: 'proyectos', component: ProyectoComponent },
-            {path: 'protocolos', component: ProtocoloComponent }
+            { path: 'proyectos', component: ProyectoComponent },
+            { path: 'protocolos', component: ProtocoloComponent }
         ]),
     ],
     declarations: [
         ProyectoComponent,
         ProtocoloComponent,
         ProyectoListComponent,
+        NotificacionesComponent,
+        KeysPipe,
     ],
-    providers:[
+    exports:[
+        NotificacionesComponent,
+    ],
+    providers: [
         ProyectoService,
         ProtocoloService,
         MuestraService,
         ExperimentoService,
+        NotificacionesService,
     ]
+
 
 })
 export class LabModule {
