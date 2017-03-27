@@ -9,6 +9,7 @@ import { ProyectoComponent } from "./proyecto/proyecto.component";
 import { ProyectoListComponent } from "./proyecto/proyecto.list.component";
 import { RouterModule } from "@angular/router";
 import { ProtocoloComponent } from "./protocolo/protocolo.component";
+import { ProtocoloBuscadorComponent } from "./protocolo/protocolo.buscador.component";
 import { NotificacionesComponent } from "./notificaciones/notificaciones.component"
 import { NotificacionesService } from "./notificaciones/notificaciones.service";
 import { KeysPipe } from "./keys.pipe";
@@ -25,12 +26,14 @@ import { KeysPipe } from "./keys.pipe";
     declarations: [
         ProyectoComponent,
         ProtocoloComponent,
+        ProtocoloBuscadorComponent,
         ProyectoListComponent,
         NotificacionesComponent,
         KeysPipe,
     ],
     exports:[
         NotificacionesComponent,
+        ProtocoloBuscadorComponent,
         ProyectoListComponent,
     ],
     providers: [

@@ -17,6 +17,7 @@ var proyecto_component_1 = require("./proyecto/proyecto.component");
 var proyecto_list_component_1 = require("./proyecto/proyecto.list.component");
 var router_1 = require("@angular/router");
 var protocolo_component_1 = require("./protocolo/protocolo.component");
+var protocolo_buscador_component_1 = require("./protocolo/protocolo.buscador.component");
 var notificaciones_component_1 = require("./notificaciones/notificaciones.component");
 var notificaciones_service_1 = require("./notificaciones/notificaciones.service");
 var keys_pipe_1 = require("./keys.pipe");
@@ -38,12 +39,14 @@ LabModule = __decorate([
         declarations: [
             proyecto_component_1.ProyectoComponent,
             protocolo_component_1.ProtocoloComponent,
+            protocolo_buscador_component_1.ProtocoloBuscadorComponent,
             proyecto_list_component_1.ProyectoListComponent,
             notificaciones_component_1.NotificacionesComponent,
             keys_pipe_1.KeysPipe,
         ],
         exports: [
             notificaciones_component_1.NotificacionesComponent,
+            protocolo_buscador_component_1.ProtocoloBuscadorComponent,
             proyecto_list_component_1.ProyectoListComponent,
         ],
         providers: [

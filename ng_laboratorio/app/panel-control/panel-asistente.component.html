@@ -1,10 +1,93 @@
 <div class="row">
-    <div class="col-lg-12">
-        <div class="text-center m-t-lg">
-            <h1>
-                Panel de Control - Asistente
-            </h1>
+    <div class="col-sm-12 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Buscar proyectos</h5>
+                <ui-ibox-tools [collapse]='true'></ui-ibox-tools>
+            </div>
+            <div class="ibox-content">
+                <!-- TODO mover todo el contenido al componente de proyectos -->
+                <div class="row">
+                    <div class="col-sm-7 m-b-xs">
 
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input placeholder="Filtrar" class="input-sm form-control" type="text">
+                            <span class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-primary"> Ir</button>
+						</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Proyecto</th>
+                                <th>Actualizado en</th>
+                                <th>Completado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Project <small>This is example of project</small></td>
+                                <td>01 Ene 2017</td>
+                                <td><span class="pie" style="display: none;">0.52/1.561</span>
+                                    <svg class="peity" height="16" width="16">
+                                        <path d="M 8 8 L 8 0 A 8 8 0 0 1 14.933563796318165 11.990700825968545 Z" fill="#1ab394"></path>
+                                        <path d="M 8 8 L 14.933563796318165 11.990700825968545 A 8 8 0 1 1 7.999999999999998 0 Z" fill="#d7d7d7"></path>
+                                    </svg>
+                                </td>
+                                <td><a href="#"><i class="fa fa-sign-in text-navy"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Alpha project</td>
+                                <td>10 Ene 2017</td>
+                                <td><span class="pie" style="display: none;">6,9</span>
+                                    <svg class="peity" height="16" width="16">
+                                        <path d="M 8 8 L 8 0 A 8 8 0 0 1 12.702282018339785 14.47213595499958 Z" fill="#1ab394"></path>
+                                        <path d="M 8 8 L 12.702282018339785 14.47213595499958 A 8 8 0 1 1 7.999999999999998 0 Z" fill="#d7d7d7"></path>
+                                    </svg>
+                                </td>
+                                <td><a href="#"><i class="fa fa-sign-in text-navy"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Betha project</td>
+                                <td>24 Ene 2017</td>
+                                <td><span class="pie" style="display: none;">3,1</span>
+                                    <svg class="peity" height="16" width="16">
+                                        <path d="M 8 8 L 8 0 A 8 8 0 1 1 0 8.000000000000002 Z" fill="#1ab394"></path>
+                                        <path d="M 8 8 L 0 8.000000000000002 A 8 8 0 0 1 7.999999999999998 0 Z" fill="#d7d7d7"></path>
+                                    </svg>
+                                </td>
+                                <td><a href="#"><i class="fa fa-sign-in text-navy"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Buscar experimentos</h5>
+                <ui-ibox-tools [collapse]='true'></ui-ibox-tools>
+            </div>
+            <lab-notificaciones></lab-notificaciones>
+        </div>
+    </div>
+    <div class="col-sm-12 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Buscar protocolos</h5>
+            </div>
+            <div class="ibox-content">
+                <protocolo-buscador></protocolo-buscador>
+            </div>
         </div>
     </div>
 </div>
