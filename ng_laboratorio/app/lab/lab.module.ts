@@ -38,7 +38,7 @@ import { EquiposService } from "./equipos/equipos.service";
         NotificacionesComponent,
         ProtocoloBuscadorComponent,
         ProyectoListComponent,
-        EquiposComponent,
+        EquiposComponent
     ],
     providers: [
         ProyectoService,

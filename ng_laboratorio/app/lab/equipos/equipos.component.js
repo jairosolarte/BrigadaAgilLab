@@ -16,10 +16,13 @@ var EquiposComponent = (function () {
         this._equipoService = _equipoService;
         this.list = [];
         this.search = '';
+        this.checkEquipos = [];
         this.selectedOrder = "-nombre";
+        this.dateEquipos = [];
     }
     EquiposComponent.prototype.ngOnInit = function () {
         this.getEquipos();
+        this.createCalendar();
     };
     EquiposComponent.prototype.getEquipos = function () {
         console.info(this.search, this.selectedOrder);
@@ -28,6 +31,32 @@ var EquiposComponent = (function () {
     EquiposComponent.prototype.onSelect = function (id) {
         alert(id);
         //$('#dd').html(id);
+    };
+    EquiposComponent.prototype.getDateCalendar = function (id) {
+        var index = this.checkEquipos.indexOf(id);
+        if (index != -1) {
+            this.checkEquipos.splice(index, 1);
+        }
+        else {
+            this.checkEquipos.push(id);
+        }
+        this.dateEquipos = this._equipoService.getDateEquipos(this.checkEquipos);
+        //console.info(this.dateEquipos);
+        this.createCalendar();
+        //jQuery('#calendar').fullCalendar('renderEvent',this.dateEquipos );
+        //jQuery('#calendar').fullCalendar( 'rerenderEvents' );
+    };
+    EquiposComponent.prototype.createCalendar = function () {
+        jQuery('#calendar').fullCalendar('destroy');
+        jQuery('#calendar').fullCalendar({
+            header: {
+                //left: 'prev,next today',
+                center: 'left',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: false,
+            events: this.dateEquipos
+        });
     };
     return EquiposComponent;
 }());
