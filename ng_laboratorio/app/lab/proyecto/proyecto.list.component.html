@@ -1,3 +1,42 @@
-<ul >
-<li *ngFor="let item of proyectos">{{ item.name }}</li>
- </ul>
+<div class="ibox-content">
+                <!-- TODO mover todo el contenido al componente de proyectos -->
+                <div class="row">
+                    <div class="col-sm-7 m-b-xs">
+
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <input placeholder="Filtrar" class="input-sm form-control" type="text">
+                            <span class="input-group-btn">
+                            <button type="button" class="btn btn-sm btn-primary"> Ir</button>
+						</span>
+                        </div>
+                    </div>
+                </div>
+</div>
+<div class="table-responsive ">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Proyecto</th>
+                                <th>Actualizado en</th>
+                                <th>Completado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of proyectos" >
+                                <td><small>{{ item.name }}</small></td>
+                                <td>{{ item.date }}</td>
+                                <td><span class="pie" style="display: none;">0.52/1.561</span>
+                                    <svg class="peity" height="16" width="16">
+                                        <path d="M 8 8 L 8 0 A 8 8 0 0 1 14.933563796318165 11.990700825968545 Z" fill="#1ab394"></path>
+                                        <path d="M 8 8 L 14.933563796318165 11.990700825968545 A 8 8 0 1 1 7.999999999999998 0 Z" fill="#d7d7d7"></path>
+                                    </svg>
+                                </td>
+                                <td><a href="#"><i class="fa fa-sign-in text-navy"></i></a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+</div>

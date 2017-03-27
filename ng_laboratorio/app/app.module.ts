@@ -34,6 +34,7 @@ import { PanelCientificoComponent } from "./panel-control/panel-cientifico.compo
         PanelControlComponentJefe,
         PanelCientificoComponent,
         PanelAsistenteComponent,
+
     ],
     bootstrap: [AppComponent]
 })

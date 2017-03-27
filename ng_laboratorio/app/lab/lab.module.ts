@@ -31,6 +31,7 @@ import { KeysPipe } from "./keys.pipe";
     ],
     exports:[
         NotificacionesComponent,
+        ProyectoListComponent,
     ],
     providers: [
         ProyectoService,

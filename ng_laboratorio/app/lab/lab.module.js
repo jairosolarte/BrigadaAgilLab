@@ -44,6 +44,7 @@ LabModule = __decorate([
         ],
         exports: [
             notificaciones_component_1.NotificacionesComponent,
+            proyecto_list_component_1.ProyectoListComponent,
         ],
         providers: [
             proyecto_service_1.ProyectoService,
