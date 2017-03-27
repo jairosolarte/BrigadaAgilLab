@@ -13,6 +13,8 @@ import { ProtocoloBuscadorComponent } from "./protocolo/protocolo.buscador.compo
 import { NotificacionesComponent } from "./notificaciones/notificaciones.component"
 import { NotificacionesService } from "./notificaciones/notificaciones.service";
 import { KeysPipe } from "./keys.pipe";
+import { EquiposComponent } from "./equipos/equipos.component";
+import { EquiposService } from "./equipos/equipos.service";
 
 @NgModule({
     imports: [
@@ -30,11 +32,13 @@ import { KeysPipe } from "./keys.pipe";
         ProyectoListComponent,
         NotificacionesComponent,
         KeysPipe,
+        EquiposComponent,
     ],
     exports:[
         NotificacionesComponent,
         ProtocoloBuscadorComponent,
         ProyectoListComponent,
+        EquiposComponent,
     ],
     providers: [
         ProyectoService,
@@ -42,6 +46,7 @@ import { KeysPipe } from "./keys.pipe";
         MuestraService,
         ExperimentoService,
         NotificacionesService,
+        EquiposService
     ]
 
 
