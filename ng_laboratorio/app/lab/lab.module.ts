@@ -6,6 +6,7 @@ import { ExperimentoService } from "./experimento/experimento.service";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { ProyectoComponent } from "./proyecto/proyecto.component";
+import { ProyectoDetalleComponent } from "./proyecto/proyecto.detalle.component";
 import { ProyectoListComponent } from "./proyecto/proyecto.list.component";
 import { RouterModule } from "@angular/router";
 import { ProtocoloComponent } from "./protocolo/protocolo.component";
@@ -32,6 +33,7 @@ import { EquiposService } from "./equipos/equipos.service";
         ProtocoloBuscadorComponent,
         ProtocoloDetalleComponent,
         ProyectoListComponent,
+        ProyectoDetalleComponent,
         NotificacionesComponent,
         KeysPipe,
         EquiposComponent,
@@ -41,6 +43,7 @@ import { EquiposService } from "./equipos/equipos.service";
         ProtocoloBuscadorComponent,
         ProtocoloDetalleComponent,
         ProyectoListComponent,
+        ProyectoDetalleComponent,
         EquiposComponent
     ],
     providers: [

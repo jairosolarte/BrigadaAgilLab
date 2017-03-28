@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: 'protocolo-buscador',
+    selector: 'protocolo-detalle',
     moduleId: module.id,
-    templateUrl: 'protocolo.buscador.component.html'
+    templateUrl: 'protocolo.detalle.component.html'
 })
-export class ProtocoloBuscadorComponent {
+export class ProtocoloDetalleComponent {
 
 }

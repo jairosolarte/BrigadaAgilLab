@@ -8,3 +8,6 @@ staticfiles
 ng_laboratorio/node_modules
 ng_laboratorio/typings
 ng_laboratorio/.vscode/
+*.detalle.component.js
+ng_laboratorio/app/lab/*.*.js.map
+ng_laboratorio/app/lab/*.*.js
