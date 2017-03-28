@@ -10,6 +10,7 @@ import { ProyectoListComponent } from "./proyecto/proyecto.list.component";
 import { RouterModule } from "@angular/router";
 import { ProtocoloComponent } from "./protocolo/protocolo.component";
 import { ProtocoloBuscadorComponent } from "./protocolo/protocolo.buscador.component";
+import { ProtocoloDetalleComponent } from "./protocolo/protocolo.detalle.component";
 import { NotificacionesComponent } from "./notificaciones/notificaciones.component"
 import { NotificacionesService } from "./notificaciones/notificaciones.service";
 import { KeysPipe } from "./keys.pipe";
@@ -29,6 +30,7 @@ import { EquiposService } from "./equipos/equipos.service";
         ProyectoComponent,
         ProtocoloComponent,
         ProtocoloBuscadorComponent,
+        ProtocoloDetalleComponent,
         ProyectoListComponent,
         NotificacionesComponent,
         KeysPipe,
@@ -37,6 +39,7 @@ import { EquiposService } from "./equipos/equipos.service";
     exports:[
         NotificacionesComponent,
         ProtocoloBuscadorComponent,
+        ProtocoloDetalleComponent,
         ProyectoListComponent,
         EquiposComponent
     ],
