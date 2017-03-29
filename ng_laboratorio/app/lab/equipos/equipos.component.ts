@@ -12,44 +12,51 @@ declare var jQuery:any;
 export class EquiposComponent implements OnInit {
     list: Equipo[] = [];
     search: string = '';
-    checkEquipos: number[] = [];
+    checkEquipos: Object[] = [];
     selectedOrder: string = "-nombre";
     dateEquipos:Array<Object> = [];
+
+
 
     constructor(private _equipoService: EquiposService) {
 
     }
     ngOnInit(): void {
-        this.getEquipos();
         this.createCalendar();
+        this.getEquipos();
     }
 
     getEquipos(){
-        console.info(this.search, this.selectedOrder);
-        this.list = this._equipoService.listEquipos(5, this.search,this.selectedOrder);
 
+        this.list = this._equipoService.listEquipos(10, this.search,this.selectedOrder);
+        for(let d of this.list){
+            this.getDateCalendar(d.id);
+        }
     }
-
-
-    onSelect(id:number){
-        alert(id);
-        //$('#dd').html(id);
-    }
-
     getDateCalendar(id:number) {
 
-        var index = this.checkEquipos.indexOf(id);
-        if(index!= -1){
-            this.checkEquipos.splice(index, 1);
+        var index = this.checkEquipos.findIndex(eq => eq['id'] === id);
+        var equipos = this.list.filter(eq => eq['id'] == id);
+        var equipo = equipos[0];
+        if(index != -1 && equipo.selected){
+            var p = this.checkEquipos.filter(eq => eq['id'] == id);
+            this.checkEquipos.splice(index, p.length);
         }else{
-           this.checkEquipos.push(id);
+            if(!equipo['color']){
+                equipo['color'] = this.getRandomColor();
+            }
+            for(let d of this._equipoService.getDateEquipos(equipo)){
+                this.checkEquipos.push(d);
+            }
         }
 
-        this.dateEquipos = this._equipoService.getDateEquipos(this.checkEquipos)
-        //console.info(this.dateEquipos);
-        this.createCalendar();
-        //jQuery('#calendar').fullCalendar('renderEvent',this.dateEquipos );
-        //jQuery('#calendar').fullCalendar( 'rerenderEvents' );
+
+        //this.dateEquipos = this._equipoService.getDateEquipos(this.checkEquipos)
+
+        var myCalendar = jQuery('#calendar');
+        myCalendar.fullCalendar('removeEvents');
+
+        myCalendar.fullCalendar( 'addEventSource', this.checkEquipos );
 
     }
 
@@ -57,14 +64,35 @@ export class EquiposComponent implements OnInit {
         jQuery('#calendar').fullCalendar('destroy');
         jQuery('#calendar').fullCalendar({
             header: {
-                //left: 'prev,next today',
-                center: 'left',
+                left: 'prev,next today',
+                center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
+            //columnFormat:'ddd M',
+            allDaySlot:false,
+            selectable:true,
+            lang: 'es',
+            minTime: "08:00:00",
+            maxTime: "18:00:00",
+            hiddenDays: [ 6,0 ],
+            defaultView: 'agendaWeek',
+            firstDay:1,
             editable: false,
             events: this.dateEquipos
         });
     }
+
+    getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+
+
 
 
 }

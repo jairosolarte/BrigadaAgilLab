@@ -20,7 +20,8 @@ import { NotificacionesService } from "./notificaciones/notificaciones.service";
 import { KeysPipe } from "./keys.pipe";
 import { EquiposComponent } from "./equipos/equipos.component";
 import { EquiposService } from "./equipos/equipos.service";
-
+import { InsumosComponent } from "./insumos/insumos.component";
+import { InsumosService } from "./insumos/insumos.service";
 @NgModule({
     imports: [
         CommonModule,
@@ -43,6 +44,7 @@ import { EquiposService } from "./equipos/equipos.service";
         NotificacionesComponent,
         KeysPipe,
         EquiposComponent,
+        InsumosComponent
     ],
     exports:[
         NotificacionesComponent,
@@ -53,7 +55,9 @@ import { EquiposService } from "./equipos/equipos.service";
         ProyectoPanelComponent,
         ProyectoListComponent,
         ProyectoDetalleComponent,
-        EquiposComponent
+        EquiposComponent,
+        InsumosComponent
+
     ],
     providers: [
         ProyectoService,
@@ -61,7 +65,9 @@ import { EquiposService } from "./equipos/equipos.service";
         MuestraService,
         ExperimentoService,
         NotificacionesService,
-        EquiposService
+        EquiposService,
+        InsumosService
+
     ]
 
 

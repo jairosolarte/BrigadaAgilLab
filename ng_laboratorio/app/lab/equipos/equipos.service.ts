@@ -9,11 +9,15 @@ export class EquiposService {
 
         let items: Array<Equipo> = [];
         for(var i = 1; i <= number; i++){
-            var nombre ='hola'+i;
+            var nombre ='Equipo ' + i;
+            var proyecto = 'Proyecto ' + i;
             if(nombre.indexOf(search) != -1 || search.trim().length == 0){
                 items.push({
                     id:i,
                     nombre:nombre,
+                    proyecto: proyecto,
+                    selected: true,
+                    imagen: this.getImagen()
                 });
            }
         }
@@ -35,17 +39,41 @@ export class EquiposService {
         }
     }
 
-    getDateEquipos(checked: number[]){
+    getDateEquipos(equipo: Object){
         let dateEquipo: Array<Object> = [];
 
-        if(checked.length == 0){
-            return dateEquipo;
-        }
+
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
         var y = date.getFullYear();
-        dateEquipo = [
+
+        var alt = Math.round(Math.random() * (4 - 1) + 1);
+
+        for(var i = 0; i <= alt ; i++){
+            var temp  = Math.round(Math.random() * (2 - 1) + 1);
+
+            var diaInit = Math.round(Math.random() * (5 - 0) + 0);
+            var diaFin = Math.round(Math.random() * (5 - 0) + 0);
+
+            if(temp == 1){
+                diaInit = -diaInit;
+            }
+
+            var hourInit = Math.round(Math.random() * (18 - 8) + 8);
+            dateEquipo.push({
+                id:equipo['id'],
+                title: equipo['proyecto'],
+                start: new Date(y, m, d+diaInit, hourInit, 0),
+                end: new Date(y, m, d+diaInit,hourInit+1,0),
+                color: equipo['color'],
+                allDay: false
+            })
+        }
+
+
+
+        /*dateEquipo = [
                 {
                     title: 'All Day Event',
                     start: new Date(y, m, 1)
@@ -90,9 +118,35 @@ export class EquiposService {
                     end: new Date(y, m, 29),
                     url: 'http://google.com/'
                 }
-            ];
+            ];*/
         return dateEquipo;
 
     }
+
+    getImagen(){
+        var temp  = Math.round(Math.random() * (5 - 1) + 1);
+        var img = "http://actualbiotec.com/wp-content/uploads/2014/12/quimica_sanguinea_1-128x128.jpg";
+        switch (temp) {
+            case 2:
+                img = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQDBRE_ee5Dj6Lc9bYZhoWC7IGgkkIBzMNUSf7eA5_mDebucQbh";
+                break;
+            case 1:
+                img = "http://www.lozar.net/~qcd_lozar/fotos/D-6_mini.jpg";
+                break;
+            case 3:
+                img = "http://actualbiotec.com/wp-content/uploads/2016/11/Bomba_infusi%C3%B3n_B_Braun-128x128.jpg";
+                break;
+            case 4:
+                img = "http://www.aguaazulinternacional.com.mx/images/home_1_05.jpg";
+                break;
+            case 5:
+                img = "http://actualbiotec.com/wp-content/uploads/2014/12/hematologia_d-128x128.jpg";
+                break;
+        }
+        return img;
+    }
+
+
+
 
 }

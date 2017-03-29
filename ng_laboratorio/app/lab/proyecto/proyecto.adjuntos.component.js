@@ -7,17 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var PanelControlComponent = (function () {
-    function PanelControlComponent() {
-        this.panelSeleccionado = 'asistente';
+var ProyectoAdjuntosComponent = (function () {
+    function ProyectoAdjuntosComponent() {
     }
-    return PanelControlComponent;
+    return ProyectoAdjuntosComponent;
 }());
-PanelControlComponent = __decorate([
+ProyectoAdjuntosComponent = __decorate([
     core_1.Component({
+        selector: "proyecto-adjuntos",
         moduleId: module.id,
-        templateUrl: 'panel-control.component.html'
+        templateUrl: 'proyecto.adjuntos.component.html',
     })
-], PanelControlComponent);
-exports.PanelControlComponent = PanelControlComponent;
-//# sourceMappingURL=panel-control.component.js.map
+], ProyectoAdjuntosComponent);
+exports.ProyectoAdjuntosComponent = ProyectoAdjuntosComponent;
+//# sourceMappingURL=proyecto.adjuntos.component.js.map
