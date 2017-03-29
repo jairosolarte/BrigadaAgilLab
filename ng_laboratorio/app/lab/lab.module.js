@@ -30,6 +30,8 @@ var equipos_component_1 = require("./equipos/equipos.component");
 var equipos_service_1 = require("./equipos/equipos.service");
 var insumos_component_1 = require("./insumos/insumos.component");
 var insumos_service_1 = require("./insumos/insumos.service");
+var experimento_buscador_component_1 = require("./experimento/experimento.buscador.component");
+var experimento_detalles_component_1 = require("./experimento/experimento.detalles.component");
 var LabModule = (function () {
     function LabModule() {
     }
@@ -52,6 +54,8 @@ LabModule = __decorate([
             proyecto_panel_component_1.ProyectoPanelComponent,
             protocolo_component_1.ProtocoloComponent,
             protocolo_buscador_component_1.ProtocoloBuscadorComponent,
+            experimento_buscador_component_1.ExperimentoBuscadorComponent,
+            experimento_detalles_component_1.ExperimentoDetallesComponent,
             protocolo_detalle_component_1.ProtocoloDetalleComponent,
             proyecto_list_component_1.ProyectoListComponent,
             proyecto_detalle_component_1.ProyectoDetalleComponent,
@@ -64,6 +68,8 @@ LabModule = __decorate([
             notificaciones_component_1.NotificacionesComponent,
             proyecto_informacion_basica_component_1.ProyectoInformacionBasicaComponent,
             protocolo_buscador_component_1.ProtocoloBuscadorComponent,
+            experimento_buscador_component_1.ExperimentoBuscadorComponent,
+            experimento_detalles_component_1.ExperimentoDetallesComponent,
             protocolo_detalle_component_1.ProtocoloDetalleComponent,
             proyecto_adjuntos_component_1.ProyectoAdjuntosComponent,
             proyecto_panel_component_1.ProyectoPanelComponent,
