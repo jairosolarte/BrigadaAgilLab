@@ -26,6 +26,7 @@ var EquiposComponent = (function () {
     };
     EquiposComponent.prototype.getEquipos = function () {
         this.list = this._equipoService.listEquipos(10, this.search, this.selectedOrder);
+        this.checkEquipos = [];
         for (var _i = 0, _a = this.list; _i < _a.length; _i++) {
             var d = _a[_i];
             this.getDateCalendar(d.id);
@@ -35,7 +36,7 @@ var EquiposComponent = (function () {
         var index = this.checkEquipos.findIndex(function (eq) { return eq['id'] === id; });
         var equipos = this.list.filter(function (eq) { return eq['id'] == id; });
         var equipo = equipos[0];
-        if (index != -1 && equipo.selected) {
+        if (index != -1 && !equipo.selected) {
             var p = this.checkEquipos.filter(function (eq) { return eq['id'] == id; });
             this.checkEquipos.splice(index, p.length);
         }
@@ -70,7 +71,8 @@ var EquiposComponent = (function () {
             hiddenDays: [6, 0],
             defaultView: 'agendaWeek',
             firstDay: 1,
-            editable: false,
+            editable: true,
+            droppable: true,
             events: this.dateEquipos
         });
     };
