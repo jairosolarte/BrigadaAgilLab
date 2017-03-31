@@ -15,6 +15,7 @@ import { RouterModule } from "@angular/router";
 import { ProtocoloComponent } from "./protocolo/protocolo.component";
 import { ProtocoloBuscadorComponent } from "./protocolo/protocolo.buscador.component";
 import { ProtocoloDetalleComponent } from "./protocolo/protocolo.detalle.component";
+import { ProtocoloResumenComponent } from "./protocolo/protocolo.resumen.component";
 import { NotificacionesComponent } from "./notificaciones/notificaciones.component"
 import { NotificacionesService } from "./notificaciones/notificaciones.service";
 import { KeysPipe } from "./keys.pipe";
@@ -24,6 +25,7 @@ import { InsumosComponent } from "./insumos/insumos.component";
 import { InsumosService } from "./insumos/insumos.service";
 import { ExperimentoBuscadorComponent } from "./experimento/experimento.buscador.component";
 import { ExperimentoDetallesComponent } from "./experimento/experimento.detalles.component";
+import { ExperimentoResumenComponent } from "./experimento/experimento.resumen.component";
 @NgModule({
     imports: [
         CommonModule,
@@ -40,8 +42,10 @@ import { ExperimentoDetallesComponent } from "./experimento/experimento.detalles
         ProyectoPanelComponent,
         ProtocoloComponent,
         ProtocoloBuscadorComponent,
+        ProtocoloResumenComponent,
         ExperimentoBuscadorComponent,
         ExperimentoDetallesComponent,
+        ExperimentoResumenComponent,
         ProtocoloDetalleComponent,
         ProyectoListComponent,
         ProyectoDetalleComponent,
@@ -56,7 +60,9 @@ import { ExperimentoDetallesComponent } from "./experimento/experimento.detalles
         ProtocoloBuscadorComponent,
         ExperimentoBuscadorComponent,
         ExperimentoDetallesComponent,
+        ExperimentoResumenComponent,
         ProtocoloDetalleComponent,
+        ProtocoloResumenComponent,
         ProyectoAdjuntosComponent,
         ProyectoPanelComponent,
         ProyectoListComponent,

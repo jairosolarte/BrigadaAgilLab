@@ -6,25 +6,40 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-12" style="overflow-y: scroll; height:100px;">
+    <div class="col-sm-12" style="overflow-y: scroll; max-height:400px;">
         <table class="table table-striped">
-
-                <tr *ngFor="let item of proyectos" >
-                    <td>{{ item.experimento }}</td>
-                    <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
-                </tr>
-                <tr>
-                    <td>Separación de sangre por centriguración</td>
-                    <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
-                </tr>
-                <tr>
-                    <td>Separación de sangre por centriguración</td>
-                    <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
-                </tr>
-                <tr>
-                    <td>Separación de sangre por centriguración</td>
-                    <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
-                </tr>
+            <thead>
+            <tr>
+                <th>Experimento</th>
+                <th>Versión</th>
+                <th>Fecha</th>
+                <th>Acciónes</th>
+            </tr>
+            </thead>
+            <tr *ngFor="let item of proyectos">
+                <td>{{ item.experimento }}</td>
+                <td>{{ item.experimento }}</td>
+                <td>{{ item.experimento }}</td>
+                <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
+            </tr>
+            <tr>
+                <td>Separación de sangre por centriguración</td>
+                <td>1</td>
+                <td>2017-02-02</td>
+                <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
+            </tr>
+            <tr>
+                <td>Separación de sangre por centriguración</td>
+                <td>1.2</td>
+                <td>2017-02-02</td>
+                <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
+            </tr>
+            <tr>
+                <td>Separación de sangre por centriguración</td>
+                <td>1.2</td>
+                <td>2017-02-02</td>
+                <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
+            </tr>
         </table>
     </div>
 
