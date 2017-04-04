@@ -1,1 +1,0 @@
-{"version":3,"file":"panel-control.component.js","sourceRoot":"","sources":["panel-control.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAAwC;AAMxC,IAAa,qBAAqB;IAJlC;QAKI,sBAAiB,GAAG,WAAW,CAAC;IAEpC,CAAC;IAAD,4BAAC;AAAD,CAAC,AAHD,IAGC;AAHY,qBAAqB;IAJjC,gBAAS,CAAC;QACP,QAAQ,EAAE,MAAM,CAAC,EAAE;QACnB,WAAW,EAAE,8BAA8B;KAC9C,CAAC;GACW,qBAAqB,CAGjC;AAHY,sDAAqB"}

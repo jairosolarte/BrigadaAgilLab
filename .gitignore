@@ -11,3 +11,4 @@ ng_laboratorio/.vscode/
 *.detalle.component.js
 ng_laboratorio/app/lab/*.*.js.map
 ng_laboratorio/app/lab/*.*.js
+/.project
