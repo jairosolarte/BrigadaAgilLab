@@ -25,7 +25,7 @@ import { InsumosComponent } from "./insumos/insumos.component";
 import { InsumosService } from "./insumos/insumos.service";
 import { ExperimentoBuscadorComponent } from "./experimento/experimento.buscador.component";
 import { ExperimentoDetallesComponent } from "./experimento/experimento.detalles.component";
-import { ExperimentoResumenComponent } from "./experimento/experimento.resumen.component";
+
 @NgModule({
     imports: [
         CommonModule,
@@ -45,7 +45,6 @@ import { ExperimentoResumenComponent } from "./experimento/experimento.resumen.c
         ProtocoloResumenComponent,
         ExperimentoBuscadorComponent,
         ExperimentoDetallesComponent,
-        ExperimentoResumenComponent,
         ProtocoloDetalleComponent,
         ProyectoListComponent,
         ProyectoDetalleComponent,
@@ -60,7 +59,6 @@ import { ExperimentoResumenComponent } from "./experimento/experimento.resumen.c
         ProtocoloBuscadorComponent,
         ExperimentoBuscadorComponent,
         ExperimentoDetallesComponent,
-        ExperimentoResumenComponent,
         ProtocoloDetalleComponent,
         ProtocoloResumenComponent,
         ProyectoAdjuntosComponent,
