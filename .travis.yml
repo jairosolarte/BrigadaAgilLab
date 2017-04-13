@@ -6,3 +6,6 @@ install: true
 script:
   - ./ci/install-ng.sh
   - ./ci/install-django.sh 
+
+node_js:
+  - "7"
