@@ -1,12 +1,10 @@
 language: python
-node_js:
-  - "7"
 before_install:
+  - nvm install 7.7.x
+  - nvm use 7.7.x
+install:
   - node -v
   - npm -v
-install:
-  - chmod +x ./ci/install-ng.sh
-  - chmod +x ./ci/install-django.sh 
 script:
   - node -v
   - npm -v
