@@ -1,0 +1,112 @@
+
+<div class="ibox float-e-margins">
+    <div class="ibox-title">
+        <h5>Equipos</h5> <span class="label label-primary">Calendario</span>
+        <div class="ibox-tools">
+            <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a href="#">Asignar equipo</a>
+                </li>
+                <li><a href="#">Crear Nuevo Equipo </a>
+                </li>
+            </ul>
+            <a class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+    <div class="ibox-content">
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label class="control-label" for="search">Nombre del equipo</label>
+                            <input (keyup)="getEquipos()" id="search" [(ngModel)]="search" type="text" value="" placeholder="Buscar por nombre del equipo" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <!--div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="control-label" for="order">Status</label>
+                                    <select (ngModelChange)="getEquipos()" [(ngModel)]="selectedOrder" name="order" id="order" class="form-control">
+                                        <option value="nombre" selected="">nombre asc</option>
+                                        <option value="-nombre">nombre des</option>
+                                    </select>
+                                </div>
+                            </div-->
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+
+
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr *ngFor="let item of list" >
+
+                                    <td>{{item.nombre}}</td>
+                                    <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
+                                    <td>
+
+                                        <input checked="checked" (ngModelChange)="getDateCalendar(item.id)" type="checkbox" [(ngModel)]="item.selected" />
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-9">
+
+                <div class="tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#tab-cal"> <i class="fa fa-calendar"></i></a></li>
+                            <li class=""><a data-toggle="tab" href="#tab-card"><i class="fa fa-cogs"></i></a></li>
+
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-cal" class="tab-pane active">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div id="calendar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-card" class="tab-pane">
+                                <div class="panel-body">
+                                    <div style="padding: 5px;" *ngFor="let item of list"  class="col-md-6">
+                                    <div  style="float: left;">
+                                        <img style="width: 50px; " src="{{item.imagen}}">
+                                    </div>
+                                    <div  style="float: left;">
+                                        <label>{{item.nombre}}</label>
+                                        <p><i class="fa fa-map-marker"></i> Laboratorio 3</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
