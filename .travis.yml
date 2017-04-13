@@ -1,4 +1,5 @@
 before_install:
+  - npm install -g protractor
   - chmod +x ./ci/install-ng.sh
   - chmod +x ./ci/install-django.sh 
 install: true
