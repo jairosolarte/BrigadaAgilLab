@@ -1,0 +1,5 @@
+install: true
+
+script:
+  - ./ci/install-ng.sh
+  - ./ci/install-django.sh 
