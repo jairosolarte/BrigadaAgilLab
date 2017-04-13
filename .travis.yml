@@ -1,14 +1,14 @@
+node_js:
+  - "7"
 before_install:
   - node -v
   - npm -v
   - npm install -g protractor
   - chmod +x ./ci/install-ng.sh
   - chmod +x ./ci/install-django.sh 
-install: true
-  
+install:
+  - node -v
+  - npm -v
 script:
   - ./ci/install-ng.sh
   - ./ci/install-django.sh 
-
-node_js:
-  - "7"
