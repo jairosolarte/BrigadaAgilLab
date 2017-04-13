@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
 import {ProyectoService} from "./proyecto.service";
-import {Proyectos} from "./proyecto";
-import {OnInit} from "@angular/core";
 
 @Component({
     moduleId: module.id,
