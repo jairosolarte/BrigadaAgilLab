@@ -10,3 +10,8 @@ install:
 script:
   - node -v
   - npm -v
+deploy:
+  - chmod +x ./ci/deploy-ng.sh
+  - chmod +x ./ci/deploy-django.sh 
+  - ./ci/deploy-ng.sh
+  - ./ci/deploy-django.sh 
