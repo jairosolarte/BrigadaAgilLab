@@ -1,4 +1,6 @@
 #!/bin/sh
-TRAVIS_NODE_VERSION="7"
+source ~/.nvm/nvm.sh
+nvm install 7
+
 cd ng/
 npm install
