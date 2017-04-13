@@ -2,12 +2,9 @@ language: python
 before_install:
   - nvm install 7.7.3
 install:
-  - cd ng && npm install
-  - pwd
+  - cd ng && npm install && cd ..
 script:
-  - node -v
-  - npm -v
-  - cd ng && npm build
+  - cd ng && npm build && cd ..
 after_success:
   - chmod +x ./ci/deploy-ng.sh
   - chmod +x ./ci/deploy-django.sh 
