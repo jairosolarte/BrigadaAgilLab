@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
+import {Component} from "@angular/core";
 import {ProyectoService} from "./proyecto.service";
-import {Proyectos} from "./proyecto";
+import {Proyecto} from "./proyecto";
 import {OnInit} from "@angular/core";
 
 @Component({
@@ -9,13 +9,17 @@ import {OnInit} from "@angular/core";
     templateUrl: 'proyecto.list.component.html',
     providers: [ProyectoService]
 })
-export class ProyectoListComponent implements OnInit{
-     public proyectos : Proyectos[]=[]
-    constructor(private _proyectoService: ProyectoService){}
-    getProyectos(){
-         this._proyectoService.getProyectos().then((proyectos: Proyectos[]) => this.proyectos = proyectos);
+export class ProyectoListComponent implements OnInit {
+    public proyectos: Proyecto[] = [];
+
+    constructor(private _proyectoService: ProyectoService) {
     }
-    ngOnInit():any{
-      this.getProyectos();
-   }
+
+    getProyectos() {
+        this._proyectoService.getProyectos().then((proyectos: Proyecto[]) => this.proyectos = proyectos);
+    }
+
+    ngOnInit(): any {
+        this.getProyectos();
+    }
 }
