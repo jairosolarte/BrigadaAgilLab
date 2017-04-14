@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
-import {ProyectoService} from "./proyecto.service";
-import {Proyecto} from "./proyecto";
+import {ProyectoService} from "./service/proyecto.service";
+import {Proyecto} from "./service/proyecto";
 import {OnInit} from "@angular/core";
 
 @Component({
