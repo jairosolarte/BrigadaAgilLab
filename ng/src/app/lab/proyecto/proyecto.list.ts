@@ -2,7 +2,7 @@
  * Created by alejandroquintero on 23/03/17.
  */
 
-import {Proyecto} from "./proyecto";
+import {Proyecto} from "./service/proyecto";
 
 //storing array of data in Fruits
 export const PROYECTOS: Proyecto[] =[
