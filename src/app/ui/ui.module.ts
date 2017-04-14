@@ -16,6 +16,7 @@ import {FormFieldComponent} from './form-field/form-field.component'
     ],
     exports: [
         iBoxToolsComponent,
+        FormFieldComponent,
     ]
 
 })

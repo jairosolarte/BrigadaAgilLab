@@ -27,6 +27,7 @@ import {ExperimentoBuscadorComponent} from "./experimento/experimento.buscador.c
 import {ExperimentoDetallesComponent} from "./experimento/experimento.detalles.component";
 import {ProyectoNuevoComponent} from './proyecto/proyecto-nuevo/proyecto-nuevo.component';
 import {ProyectoControladorComponent} from './proyecto/proyecto-controlador/proyecto-controlador.component';
+import {UIModule} from "../ui/ui.module";
 
 @NgModule({
     imports: [
@@ -37,6 +38,7 @@ import {ProyectoControladorComponent} from './proyecto/proyecto-controlador/proy
             {path: 'proyectos/nuevo', component: ProyectoNuevoComponent},
             {path: 'protocolos', component: ProtocoloComponent}
         ]),
+        UIModule,
     ],
     declarations: [
         ProyectoComponent,
