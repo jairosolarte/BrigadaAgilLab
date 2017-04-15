@@ -28,6 +28,7 @@ import {ExperimentoDetallesComponent} from "./experimento/experimento.detalles.c
 import {ProyectoNuevoComponent} from './proyecto/proyecto-nuevo/proyecto-nuevo.component';
 import {ProyectoControladorComponent} from './proyecto/proyecto-controlador/proyecto-controlador.component';
 import {UIModule} from "../ui/ui.module";
+import {LabelsService} from "./labels.service";
 
 @NgModule({
     imports: [
@@ -83,8 +84,8 @@ import {UIModule} from "../ui/ui.module";
         ExperimentoService,
         NotificacionesService,
         EquiposService,
-        InsumosService
-
+        InsumosService,
+        LabelsService
     ]
 
 

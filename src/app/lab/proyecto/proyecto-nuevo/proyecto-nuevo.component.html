@@ -3,24 +3,27 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>Nuevo Proyecto</h5>
+                    <h5>{{_["tit_nuevo_proyecto"]}}</h5>
                 </div>
                 <div class="ibox-content">
                     <form method="get" class="form-horizontal">
-                        <lab-form-field [label]="'Nombre'">
+                        <lab-form-field [label]="_['cmp_nombre']">
                             <input type="text" class="form-control" name="nombre">
                         </lab-form-field>
-                        <lab-form-field [label]="'Identificador'">
+                        <lab-form-field [label]="_['cmp_identificador']">
                             <input type="text" class="form-control" name="id">
                         </lab-form-field>
-                        <lab-form-field [label]="'Descripción'">
+                        <lab-form-field [label]="_['cmp_descripcion']">
                             <textarea class="form-control message-input" name="descripcion"></textarea>
                         </lab-form-field>
                         <div class="hr-line-dashed"></div>
+                        <lab-form-field [label]="_['cmp_cientifico_leader']">
+                            <input type="text" class="form-control" name="cientificoLider">
+                        </lab-form-field>
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-white" type="submit">Cancel</button>
-                                <button class="btn btn-primary" type="submit">Save changes</button>
+                                <a [routerLink]="['/proyectos']" class="btn btn-white" type="submit">{{_['acc_cancelar']}}</a>
+                                <button class="btn btn-primary" type="submit">{{_['acc_guardar']}}</button>
                             </div>
                         </div>
                     </form>
