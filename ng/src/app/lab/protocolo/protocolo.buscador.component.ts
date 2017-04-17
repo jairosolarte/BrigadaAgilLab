@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import {ProtocoloService} from "./service/protocolo.service";
+import {Protocolo} from "./service/protocolo";
+import {OnInit} from "@angular/core";
 
 @Component({
     selector: 'protocolo-buscador',
@@ -7,4 +10,16 @@ import { Component } from "@angular/core";
 })
 export class ProtocoloBuscadorComponent {
 
+    public protocolos: Protocolo[] = [];
+
+    constructor(private _protocoloService: ProtocoloService) {
+    }
+
+    listarProtocolos() {
+        this._protocoloService.listarProtocolos().then((protocolos: Protocolo[]) => this.protocolos = protocolos);
+    }
+
+    ngOnInit(): any {
+        this.listarProtocolos();
+    }
 }

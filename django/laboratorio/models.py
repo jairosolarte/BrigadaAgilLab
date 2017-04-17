@@ -22,6 +22,12 @@ class Usuario(models.Model):
     def __unicode__(self):
         return u'%s' % (self.nombre)
 
+class Protocolo(models.Model):
+    nombre = models.CharField(max_length=50)
+    version = models.CharField(max_length=50)
+    fecha = models.DateField()
+
+
 
 class Insumo(models.Model):
     nombre = models.CharField(max_length=50)

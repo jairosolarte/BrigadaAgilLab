@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {ProyectoService} from "./proyecto/service/proyecto.service";
-import {ProtocoloService} from "./protocolo/protocolo.service";
+import {ProtocoloService} from "./protocolo/service/protocolo.service";
 import {MuestraService} from "./muestra/muestra.service";
 import {ExperimentoService} from "./experimento/experimento.service";
 import {FormsModule} from "@angular/forms";
@@ -37,6 +37,7 @@ import {LabelsService} from "./labels.service";
         RouterModule.forChild([
             {path: 'proyectos', component: ProyectoControladorComponent},
             {path: 'proyectos/nuevo', component: ProyectoNuevoComponent},
+            {path: 'proyectos/panel', component: ProyectoPanelComponent},
             {path: 'protocolos', component: ProtocoloComponent}
         ]),
         UIModule,
