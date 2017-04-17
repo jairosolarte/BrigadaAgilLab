@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'laboratorio',
-    #'experimento'
+    # 'experimento'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -134,7 +134,3 @@ STATICFILES_DIRS = [
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-ANGULAR_URL = '/lab/'
-ANGULAR_ROOT = os.path.join(BASE_DIR, 'ng_laboratorio/')
-
