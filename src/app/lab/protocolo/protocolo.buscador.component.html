@@ -17,28 +17,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Generación de ematofitos</td>
-                    <td>1.0</td>
-                    <td>Julio 14, 2012</td>
-                    <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
-                </tr><tr>
-                    <td>Generación de peematofitos</td>
-                    <td>2.0</td>
-                    <td>Julio 14, 2012</td>
-                    <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
-                </tr><tr>
-                    <td>Generación de geematofitos</td>
-                    <td>1.5</td>
-                    <td>Julio 14, 2015</td>
-                    <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
-                </tr><tr>
-                    <td>Generación de tuoematofitos</td>
-                    <td>1.6</td>
-                    <td>Julio 14, 2013</td>
+                <tr *ngFor="let protocolo of protocolos" >
+                    <td>{{ protocolo.nombre }}</td>
+                    <td>{{ protocolo.version }}</td>
+                    <td>{{ protocolo.fecha }}</td>
                     <td><a href="#"><i class="fa fa-eye text-navy"></i></a></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+
