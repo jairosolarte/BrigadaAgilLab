@@ -29,6 +29,7 @@ import {ProyectoNuevoComponent} from './proyecto/proyecto-nuevo/proyecto-nuevo.c
 import {ProyectoControladorComponent} from './proyecto/proyecto-controlador/proyecto-controlador.component';
 import {UIModule} from "../ui/ui.module";
 import {LabelsService} from "./labels.service";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import {LabelsService} from "./labels.service";
             {path: 'protocolos', component: ProtocoloComponent}
         ]),
         UIModule,
+        HttpModule,
     ],
     declarations: [
         ProyectoComponent,
