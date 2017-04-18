@@ -16,7 +16,7 @@ export class ProyectoListComponent implements OnInit {
     }
 
     getProyectos() {
-        this._proyectoService.getProyectos().then((proyectos: Proyecto[]) => this.proyectos = proyectos);
+        this._proyectoService.getProyectos().subscribe((proyectos: Proyecto[]) => this.proyectos = proyectos);
     }
 
     ngOnInit(): any {
