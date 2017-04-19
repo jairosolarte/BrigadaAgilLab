@@ -8,5 +8,6 @@ export interface Proyecto {
     descripcion: string;
     fecha_creacion: string;
     fecha_inicio: string;
+    cientifico_lider: string;
 
 }
