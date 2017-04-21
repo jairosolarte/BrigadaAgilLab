@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 
 from laboratorio.views import ProyectoView
-from . import views
+from laboratorio.views.experimento_views import ExperimentoView
+from laboratorio.views.protocolo_views import ProtocoloView
 
 urlpatterns = [
-    url(r'^$', views.listar_protocolos, name='listar_protocolos'),
     url(r'^proyecto/$', ProyectoView.as_view(), name='proyecto'),
+    url(r'^experimento/$', ExperimentoView.as_view(), name='experimento'),
+    url(r'^protocolo/$', ProtocoloView.as_view(), name='protocolo'),
 ]

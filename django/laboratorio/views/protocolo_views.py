@@ -1,11 +1,9 @@
-from django.core import serializers
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
+# coding=utf-8
 
 from laboratorio.models import Protocolo
+from laboratorio.views import ContenidoJsonBaseView
 
 
-@csrf_exempt
-def listar_protocolos(request, protocolos=None):
-    protocolos = Protocolo.objects.all()
-    return HttpResponse(serializers.serialize("json", protocolos))
+class ProtocoloView(ContenidoJsonBaseView):
+    def __init__(self):
+        self.model = Protocolo

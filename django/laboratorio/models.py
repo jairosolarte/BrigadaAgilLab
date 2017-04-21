@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
-from django.db import models
+
 from django.contrib.auth.models import Group, User
+from django.db import models
 
 
 class Perfil(Group):
@@ -22,16 +23,10 @@ class Usuario(models.Model):
     def __unicode__(self):
         return u'%s' % (self.nombre)
 
-class Protocolo(models.Model):
-    nombre = models.CharField(max_length=50)
-    version = models.CharField(max_length=50)
-    fecha = models.DateField()
-
-
 
 class Insumo(models.Model):
     nombre = models.CharField(max_length=50)
-    Unidad_Medida=(
+    Unidad_Medida = (
         ("mg", "Miligramo"),
         ("gr", "Gramo"),
         ("Kg", "Kilogramo"),
@@ -77,3 +72,17 @@ class Pedido(models.Model):
     estado = models.CharField(max_length=1, choices=estado_type)
     cantidad = models.DecimalField(max_digits=10, decimal_places=4, default=0)
     insumo = models.ForeignKey(Insumo)
+
+
+# ---- Modelos basados en JSON
+
+class Proyecto(models.Model):
+    contenido = models.TextField()
+
+
+class Experimento(models.Model):
+    contenido = models.TextField()
+
+
+class Protocolo(models.Model):
+    contenido = models.TextField()
