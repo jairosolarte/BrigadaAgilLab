@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Http, Response} from "@angular/http";
+import {Http, Response, RequestOptions} from "@angular/http";
 import {environment} from "../../../../environments/environment";
 import {Observable} from "rxjs/Observable";
 import {Proyecto} from "./proyecto";
@@ -17,7 +17,11 @@ export class ProyectoService {
     return this._http.get(this.url_servicios_proyectos).map((response: Response) => <Proyecto[]>response.json());
   }
 
-  nuevoProyecto() {
+  nuevoProyecto(form):Observable<Proyecto[]> {
+    console.log(form);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions(headers);
+    return this._http.post(this.url_servicios_proyectos,form,options).map((response:Response) => <Proyecto[]>response.json());
   }
 
   eliminarProyecto() {

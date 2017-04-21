@@ -1,6 +1,8 @@
 import {Component, OnInit} from "@angular/core";
 import {ProyectoService} from "../service/proyecto.service";
 import {LabelsService} from "../../labels.service";
+import {NgForm} from '@angular/forms';
+
 
 @Component({
   templateUrl: 'proyecto-nuevo.component.html',
@@ -16,7 +18,11 @@ export class ProyectoNuevoComponent implements OnInit {
   ngOnInit() {
   }
 
-  guardar(): void {
+  guardar(form:NgForm): void {
 
+
+   form.value["fecha_creacion"]= new Date();
+
+   this._proyectoService.nuevoProyecto(form.value).subscribe(res => console.log(res),error=>console.log(error));
   }
 }
