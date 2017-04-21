@@ -1,7 +1,7 @@
 # coding=utf-8
 
-from laboratorio.models import Protocolo
-from laboratorio.views import ContenidoJsonBaseView
+from ..models import Protocolo
+from ..views import ContenidoJsonBaseView
 
 
 class ProtocoloView(ContenidoJsonBaseView):

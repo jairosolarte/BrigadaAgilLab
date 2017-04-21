@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
 
-from laboratorio.models import Experimento, Protocolo
+from .models import Experimento, Protocolo
 from .models import Perfil, Usuario, Proyecto
 
 admin.site.register(Perfil)
