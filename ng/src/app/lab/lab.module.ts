@@ -5,12 +5,11 @@ import {MuestraService} from "./muestra/muestra.service";
 import {ExperimentoService} from "./experimento/experimento.service";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
-import {ProyectoComponent} from "./proyecto/proyecto.component";
-import {ProyectoAdjuntosComponent} from "./proyecto/proyecto.adjuntos.component";
-import {ProyectoInformacionBasicaComponent} from "./proyecto/proyecto.informacion.basica.component";
-import {ProyectoPanelComponent} from "./proyecto/proyecto.panel.component";
-import {ProyectoDetalleComponent} from "./proyecto/proyecto.detalle.component";
-import {ProyectoListComponent} from "./proyecto/proyecto.list.component";
+import {ProyectoAdjuntosComponent} from "./proyecto/proyecto-detalle/proyecto.adjuntos.component";
+import {ProyectoInformacionBasicaComponent} from "./proyecto/proyecto-detalle/proyecto.informacion.basica.component";
+import {ProyectoDetalleComponent} from "./proyecto/proyecto-detalle/proyecto.detalle.component";
+import {ProyectoResumenComponent} from "./proyecto/proyecto-resumen/proyecto.resumen.component";
+import {ProyectoListComponent} from "./proyecto/proyecto-listado/proyecto.list.component";
 import {RouterModule} from "@angular/router";
 import {ProtocoloComponent} from "./protocolo/protocolo.component";
 import {ProtocoloBuscadorComponent} from "./protocolo/protocolo.buscador.component";
@@ -38,17 +37,16 @@ import {HttpModule} from "@angular/http";
         RouterModule.forChild([
             {path: 'proyecto', component: ProyectoControladorComponent},
             {path: 'proyecto/nuevo', component: ProyectoNuevoComponent},
-            {path: 'proyecto/:id', component: ProyectoPanelComponent},
+            {path: 'proyecto/:id', component: ProyectoDetalleComponent},
             {path: 'protocolos', component: ProtocoloComponent}
         ]),
         UIModule,
         HttpModule,
     ],
     declarations: [
-        ProyectoComponent,
         ProyectoInformacionBasicaComponent,
         ProyectoAdjuntosComponent,
-        ProyectoPanelComponent,
+        ProyectoDetalleComponent,
         ProtocoloComponent,
         ProtocoloBuscadorComponent,
         ProtocoloResumenComponent,
@@ -56,7 +54,7 @@ import {HttpModule} from "@angular/http";
         ExperimentoDetallesComponent,
         ProtocoloDetalleComponent,
         ProyectoListComponent,
-        ProyectoDetalleComponent,
+        ProyectoResumenComponent,
         NotificacionesComponent,
         KeysPipe,
         EquiposComponent,
@@ -73,9 +71,9 @@ import {HttpModule} from "@angular/http";
         ProtocoloDetalleComponent,
         ProtocoloResumenComponent,
         ProyectoAdjuntosComponent,
-        ProyectoPanelComponent,
-        ProyectoListComponent,
         ProyectoDetalleComponent,
+        ProyectoListComponent,
+        ProyectoResumenComponent,
         EquiposComponent,
         InsumosComponent
 
