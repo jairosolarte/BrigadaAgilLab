@@ -21,6 +21,11 @@ from laboratorio.views.protocolo_views import ProtocoloView
 
 urlpatterns = [
     url(r'^proyecto/$', ProyectoView.as_view(), name='proyecto'),
+    url(r'^proyecto/(?P<id>\d+)/$', ProyectoView().get_por_id, name='proyecto_id'),
+
     url(r'^experimento/$', ExperimentoView.as_view(), name='experimento'),
+    url(r'^experimento/(?P<id>\d+)/$', ExperimentoView().get_por_id, name='experimento_id'),
+
     url(r'^protocolo/$', ProtocoloView.as_view(), name='protocolo'),
+    url(r'^protocolo/(?P<id>\d+)/$', ProtocoloView().get_por_id, name='protocolo_id'),
 ]

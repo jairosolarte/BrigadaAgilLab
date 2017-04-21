@@ -36,3 +36,7 @@ class ContenidoJsonBaseView(View):
         modelo.contenido = request.body
         modelo.save()
         return HttpResponse(modelo.contenido, content_type="application/json")
+
+    def get_por_id(self, request, id=None):
+        modelo = self.model.objects.get(pk=id)
+        return HttpResponse(modelo.contenido, content_type="application/json")

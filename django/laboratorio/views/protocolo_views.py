@@ -5,5 +5,6 @@ from laboratorio.views import ContenidoJsonBaseView
 
 
 class ProtocoloView(ContenidoJsonBaseView):
+
     def __init__(self):
         self.model = Protocolo
