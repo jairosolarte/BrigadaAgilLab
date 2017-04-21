@@ -36,9 +36,9 @@ import {HttpModule} from "@angular/http";
         CommonModule,
         FormsModule,
         RouterModule.forChild([
-            {path: 'proyectos', component: ProyectoControladorComponent},
-            {path: 'proyectos/nuevo', component: ProyectoNuevoComponent},
-            {path: 'proyectos/panel', component: ProyectoPanelComponent},
+            {path: 'proyecto', component: ProyectoControladorComponent},
+            {path: 'proyecto/nuevo', component: ProyectoNuevoComponent},
+            {path: 'proyecto/:id', component: ProyectoPanelComponent},
             {path: 'protocolos', component: ProtocoloComponent}
         ]),
         UIModule,
