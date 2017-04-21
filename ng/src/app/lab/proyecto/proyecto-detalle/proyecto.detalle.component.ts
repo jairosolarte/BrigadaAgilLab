@@ -6,7 +6,7 @@ import {ActivatedRoute} from "@angular/router";
     templateUrl: 'proyecto.detalle.component.html',
 })
 export class ProyectoDetalleComponent {
-    private idProyecto: String;
+    idProyecto: String;
 
     constructor(route: ActivatedRoute) {
         this.idProyecto = route.snapshot.params['id'];
