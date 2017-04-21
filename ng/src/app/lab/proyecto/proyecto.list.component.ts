@@ -4,7 +4,6 @@ import {Proyecto} from "./service/proyecto";
 import {OnInit} from "@angular/core";
 
 @Component({
-    moduleId: module.id,
     selector: "proyecto-list",
     templateUrl: 'proyecto.list.component.html',
     providers: [ProyectoService]
