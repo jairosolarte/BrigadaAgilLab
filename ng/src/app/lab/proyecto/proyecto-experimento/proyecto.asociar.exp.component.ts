@@ -16,6 +16,7 @@ export class ProyectoAsociarExpComponent implements OnInit {
   public experimento: Experimentos[] = [];
   public idProyecto: string;
   public proyecto: Proyecto[] = [];
+  public show:string;
 
 
   constructor(private _experimentoService: ExperimentoService,
@@ -33,6 +34,7 @@ export class ProyectoAsociarExpComponent implements OnInit {
 
   onSelect(item: Experimentos[]) {
     this.experimento = item;
+    this.show="true";
     window.scroll(0,300);
   }
 
