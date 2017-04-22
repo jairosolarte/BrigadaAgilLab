@@ -27,10 +27,13 @@
               <th>detalle</th>
             </tr>
             </thead>
+
             <tr *ngFor="let item of experimentos" (click)="onSelect(item)">
-              <td>{{ item.experimento }}</td>
-              <td>{{ item.objetivo }}</td>
-              <td>{{ item.fecha }}</td>
+
+              <td *ngIf="item.experimento">{{ item.experimento }}</td>
+              <td *ngIf="item.objetivo">{{ item.objetivo }}</td>
+              <td *ngIf="item.fecha">{{ item.fecha }}</td>
+
               <td><a><i class="fa fa-sign-out text-navy"></i></a></td>
             </tr>
 

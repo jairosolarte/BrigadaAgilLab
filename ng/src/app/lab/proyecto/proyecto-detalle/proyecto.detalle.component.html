@@ -77,9 +77,11 @@
             </thead>
             <tbody>
             <tr *ngFor="let exp of proyecto.experimentos" >
-                <td><small>{{ exp.experimento}}</small></td>
-                <td>{{ exp.fecha }}</td>
-                <td>{{exp.objetivo }}</td>
+
+                <td *ngIf="exp.experimento">{{ exp.experimento}}</td>
+                <td *ngIf="exp.fecha">{{ exp.fecha }}</td>
+                <td *ngIf="exp.objetivo">{{exp.objetivo }}</td>
+
                 <td><a><i class="fa fa-sign-in text-navy"></i></a></td>
             </tr>
 
