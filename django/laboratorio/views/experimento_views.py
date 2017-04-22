@@ -1,8 +1,8 @@
 # coding=utf-8
 import json
 
-from laboratorio.models import Experimento, ExperimentoProtocolo
-from laboratorio.views import ContenidoJsonBaseView, LaboratorioBaseView, LaboratorioException, HttpResponse
+from ..models import Experimento, ExperimentoProtocolo
+from ..views import ContenidoJsonBaseView, LaboratorioBaseView, LaboratorioException, HttpResponse
 
 
 class ExperimentoView(ContenidoJsonBaseView):

@@ -25,11 +25,11 @@ export class ExperimentoService {
       return Promise.resolve(EXPERIMENTOS.filter(x=>x.id==id));
     }
 
-    asociarProtocolo(item):Observable<Experimentos[]>{
+    asociarProtocolo(item,protocolo):Observable<Experimentos[]>{
 
       let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions(headers);
-       return this._http.put(this.url_servicios_proyectos+item["id"]+"/",item,options).map(response=><Experimentos[]>response.json());
+       return this._http.post(this.url_servicios_proyectos+item["id"]+"/protocolo/"+protocolo["id"],item,options).map(response=><Experimentos[]>response.json());
 
     }
 }
