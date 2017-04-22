@@ -9,7 +9,7 @@ import {Proyecto} from "../service/proyecto";
   providers: [ProyectoService]
 })
 export class ProyectoDetalleComponent implements OnInit {
-  private idProyecto: string;
+  public idProyecto: string;
   public proyecto: Proyecto[] = [];
 
 
