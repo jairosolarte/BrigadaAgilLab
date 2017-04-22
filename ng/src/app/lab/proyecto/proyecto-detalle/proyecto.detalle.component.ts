@@ -11,11 +11,11 @@ import {Proyecto} from "../service/proyecto";
 export class ProyectoDetalleComponent implements OnInit {
   public idProyecto: string;
   public proyecto: Proyecto[] = [];
-
+  public show:string;
 
   constructor(route: ActivatedRoute, private _proyectoService: ProyectoService) {
     this.idProyecto = route.snapshot.params['id'];
-     this.getProyecto();
+
 
   }
 
@@ -26,14 +26,11 @@ export class ProyectoDetalleComponent implements OnInit {
           this.proyecto = JSON.parse(JSON.stringify(proyectos.filter(p => p.id == parseInt(this.idProyecto))
             .pop())),
         error => console.log(error),
-        () => console.log(this.proyecto));
+        () => this.show="true");
   }
-inicializaVariables(){
-  if (!this.proyecto["experimentos"])
-      this.proyecto["experimentos"] = [];
-  }
+
   ngOnInit(): any {
-this.inicializaVariables();
+this.getProyecto();
 
   }
 }

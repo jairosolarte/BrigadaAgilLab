@@ -17,7 +17,7 @@ export class ExperimentoAsociarProtocoloComponent implements OnInit{
  public protocolos:Protocolo[]=[];
  public idExperimento:string;
  public experimento:Experimentos;
-
+public show:string;
   constructor(private _experimentoService:ExperimentoService,
               private _protocoloService:ProtocoloService,
               route: ActivatedRoute){
@@ -26,6 +26,7 @@ this.idExperimento = route.snapshot.params['id'];
   }
 onSelect(item){
     this.protocolo = item;
+    this.show="true";
 }
  getProtocolos(){
     this._protocoloService.listarProtocolos().subscribe((protocolos:Protocolo[])=>this.protocolos=protocolos);
@@ -44,6 +45,7 @@ onSelect(item){
     this._experimentoService.asociarProtocolo(experimento).subscribe(res=>console.log(res));
 
   }
+
   ngOnInit(){
     this.getProtocolos();
   }
