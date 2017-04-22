@@ -77,24 +77,45 @@ class Pedido(models.Model):
 # ---- Modelos basados en JSON
 
 class Proyecto(models.Model):
+    # almacena contenido basico del proyecto, sin relaciones a otros modelos
     contenido = models.TextField()
 
 
 class Experimento(models.Model):
+    # almacena contenido basico del experimiento, sin relaciones a otros modelos
     contenido = models.TextField()
 
 
 class Protocolo(models.Model):
-    contenido = models.TextField(null=True)
-
-
-class ExperimentoProtocolo(models.Model):
-    experimento = models.ForeignKey(Experimento)
-    protocolo = models.ForeignKey(Protocolo)
+    # almacena contenido basico del protocolo,
+    # informacion que no cambia entre versiones
+    # sin relaciones a otros modelos
     contenido = models.TextField()
 
 
+# Relaciona los experimentos de un proyecto
 class ProyectoExperimento(models.Model):
     proyecto = models.ForeignKey(Proyecto)
     experimento = models.ForeignKey(Experimento)
+    # Almacena el avance del experimento en el proyecto
+    contenido = models.TextField()
+
+
+class VersionProtocolo(models.Model):
+    protocolo = models.ForeignKey(Protocolo)
+    # almacena la informacion que debe ser versionada del protocolo
+    contenido = models.TextField()
+
+
+# Permite establecer la plantilla de los protocolos de un experimento
+class ExperimentoProtocolo(models.Model):
+    experimento = models.ForeignKey(Experimento)
+    protocolo = models.ForeignKey(Protocolo)
+    # No usado
+    contenido = models.TextField()
+
+
+class AvanceProtocoloExperimentoProyecto(models.Model):
+    proy_experimento = models.ForeignKey(ProyectoExperimento)
+    # Almacena el avance del protocolo asociado a un experimento de un proyecto
     contenido = models.TextField()
