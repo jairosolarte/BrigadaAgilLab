@@ -11,12 +11,13 @@ import {OnInit} from "@angular/core";
 export class ProtocoloBuscadorComponent {
 
     public protocolos: Protocolo[] = [];
+    public nombre: String = "nomb";
 
     constructor(private _protocoloService: ProtocoloService) {
     }
 
     listarProtocolos() {
-        this._protocoloService.listarProtocolos().then((protocolos: Protocolo[]) => this.protocolos = protocolos);
+        this._protocoloService.listarProtocolosFiltradosNombre(this.nombre).subscribe((protocolos: Protocolo[]) => this.protocolos = protocolos);
     }
 
     ngOnInit(): any {
