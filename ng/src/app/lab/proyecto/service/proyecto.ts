@@ -10,6 +10,5 @@ export interface Proyecto {
     fecha_creacion: string;
     fecha_inicio: string;
     cientifico_lider: string;
-    experimentos:Experimentos[];
 
 }

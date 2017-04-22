@@ -30,9 +30,9 @@
 
             <tr *ngFor="let item of experimentos" (click)="onSelect(item)">
 
-              <td *ngIf="item.experimento">{{ item.experimento }}</td>
-              <td *ngIf="item.objetivo">{{ item.objetivo }}</td>
-              <td *ngIf="item.fecha">{{ item.fecha }}</td>
+              <td >{{ item.experimento }}</td>
+              <td >{{ item.objetivo }}</td>
+              <td >{{ item.fecha }}</td>
 
               <td><a><i class="fa fa-sign-out text-navy"></i></a></td>
             </tr>
@@ -72,7 +72,7 @@
           <hr>
         </div>
         <div class="col-md-4">
-    <button [routerLink]="['/proyecto',idProyecto]" class="btn btn-primary btn-md" (click)="getProyecto(experimento)">
+    <button [routerLink]="['/proyecto',idProyecto]" target="_self" class="btn btn-primary btn-md" (click)="getProyecto(experimento)">
       agregar
     </button>
   </div>

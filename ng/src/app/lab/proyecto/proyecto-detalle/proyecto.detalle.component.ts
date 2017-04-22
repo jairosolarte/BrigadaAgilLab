@@ -30,5 +30,6 @@ export class ProyectoDetalleComponent implements OnInit {
 
   ngOnInit(): any {
     this.getProyecto();
+
   }
 }

@@ -85,7 +85,7 @@ class Experimento(models.Model):
 
 
 class Protocolo(models.Model):
-    contenido = models.TextField()
+    contenido = models.TextField(null=True)
 
 
 class ExperimentoProtocolo(models.Model):
