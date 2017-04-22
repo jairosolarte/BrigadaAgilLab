@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from .views import ProyectoExperimentoView, ExperimentoProtocolo, ExperimentoView, ProtocoloView, \
-    ProyectoView
+from laboratorio.views import ProyectoExperimentoView, ExperimentoView, ProtocoloView, \
+    ProyectoView, ExperimentoProtocoloView
 
 urlpatterns = [
     url(r'^proyecto/$', ProyectoView.as_view(), name='proyecto'),
@@ -29,14 +29,11 @@ urlpatterns = [
 
     url(r'^experimento/$', ExperimentoView.as_view(), name='experimento'),
     url(r'^experimento/(?P<id>\d+)/$', ExperimentoView().get_por_id, name='experimento_id'),
-
-
-
     # Experimento - protocolo
-    # url(r'^experimento/(?P<id_experimento>\d+)/protocolo/$', ExperimentoProtocolo.as_view(),
-    #     name='experimento_protocolo_todos'),
-    # url(r'^experimento/(?P<id_experimento>\d+)/protocolo/(?P<id_protocolo>\d*)$', ExperimentoProtocolo.as_view(),
-    #     name='experimento_protocolo'),
+    url(r'^experimento/(?P<id_experimento>\d+)/protocolo/$', ExperimentoProtocoloView.as_view(),
+        name='experimento_protocolo_todos'),
+    url(r'^experimento/(?P<id_experimento>\d+)/protocolo/(?P<id_protocolo>\d*)$', ExperimentoProtocoloView.as_view(),
+         name='experimento_protocolo'),
 
     url(r'^protocolo/$', ProtocoloView.as_view(), name='protocolo'),
     url(r'^protocolo/(?P<id>\d+)/$', ProtocoloView().get_por_id, name='protocolo_id'),
