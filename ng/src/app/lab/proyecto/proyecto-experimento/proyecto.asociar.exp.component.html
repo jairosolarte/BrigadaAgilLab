@@ -47,11 +47,7 @@
   <h2>{{experimento.experimento}}
     <small><strong> {{experimento.objetivo}}</strong></small>
   </h2>
-  <div class="ibox-tools">
-    <button [routerLink]="['/proyecto',idProyecto]" class="btn btn-primary btn-md" (click)="getProyecto(experimento)">
-      agregar
-    </button>
-  </div>
+
   <hr>
   <div class="row">
     <div class="col-sm-12">
@@ -72,6 +68,11 @@
           {{experimento.asistentes}}
           <hr>
         </div>
+        <div class="col-md-4">
+    <button [routerLink]="['/proyecto',idProyecto]" class="btn btn-primary btn-md" (click)="getProyecto(experimento)">
+      agregar
+    </button>
+  </div>
       </div>
       <div class="row">
         <div class="col-sm-12" style="overflow-y: scroll; max-height:400px;">

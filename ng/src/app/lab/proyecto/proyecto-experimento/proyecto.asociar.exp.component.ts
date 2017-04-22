@@ -32,6 +32,7 @@ export class ProyectoAsociarExpComponent implements OnInit {
 
   onSelect(item: Experimentos[]) {
     this.experimento = item;
+    window.scroll(0,300);
   }
 
   getProyecto(item) {
