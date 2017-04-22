@@ -26,7 +26,7 @@ export class ProyectoAsociarExpComponent implements OnInit {
   getExperimentos() {
     this._experimentoService
       .getExperimentos()
-      .then((experimentos: Experimentos[]) =>
+      .subscribe((experimentos: Experimentos[]) =>
         this.experimentos = experimentos);
   }
 

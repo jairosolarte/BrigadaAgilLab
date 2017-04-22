@@ -14,7 +14,7 @@ export class ExperimentoBuscadorComponent {
     constructor(private _experimentoService: ExperimentoService){}
 
     getExperimentos(){
-        this._experimentoService.getExperimentos().then((experimentos: Experimentos[]) => this.experimentos = experimentos);
+        this._experimentoService.getExperimentosStatic().then((experimentos: Experimentos[]) => this.experimentos = experimentos);
     }
     ngOnInit():any{
         this.getExperimentos();

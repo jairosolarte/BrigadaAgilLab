@@ -30,6 +30,7 @@ import {UIModule} from "../ui/ui.module";
 import {LabelsService} from "./labels.service";
 import {HttpModule} from "@angular/http";
 import {ProyectoAsociarExpComponent} from "./proyecto/proyecto-experimento/proyecto.asociar.exp.component";
+import {ExperimentoAsociarProtocoloComponent} from "./experimento/experimento.asociar.protocolo.component";
 
 @NgModule({
     imports: [
@@ -41,7 +42,8 @@ import {ProyectoAsociarExpComponent} from "./proyecto/proyecto-experimento/proye
             {path: 'proyecto/:id', component: ProyectoDetalleComponent},
             {path: 'protocolos', component: ProtocoloComponent},
             {path: 'proyecto/:id/experimento', component: ProyectoAsociarExpComponent},
-            {path: 'experimento', component: ExperimentoBuscadorComponent}
+            {path: 'experimento', component: ExperimentoBuscadorComponent},
+            {path: 'proyecto/:id/experimento/:id/protocolos',component: ExperimentoAsociarProtocoloComponent}
 
 
 
@@ -67,7 +69,8 @@ import {ProyectoAsociarExpComponent} from "./proyecto/proyecto-experimento/proye
         InsumosComponent,
         ProyectoNuevoComponent,
         ProyectoControladorComponent,
-        ProyectoAsociarExpComponent
+        ProyectoAsociarExpComponent,
+        ExperimentoAsociarProtocoloComponent
     ],
     exports: [
         NotificacionesComponent,

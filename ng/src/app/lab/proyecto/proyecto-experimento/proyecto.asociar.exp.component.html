@@ -22,7 +22,7 @@
             <thead>
             <tr>
               <th>Experimento</th>
-              <th>Versión</th>
+              <th>Objetivo</th>
               <th>Fecha</th>
               <th>detalle</th>
             </tr>
@@ -47,13 +47,17 @@
 
 
 <div class="ibox-content" *ngIf="experimento.experimento">
-  <h2>{{experimento.experimento}}
-    <small><strong> {{experimento.objetivo}}</strong></small>
-  </h2>
+  <h2>{{experimento.experimento}}</h2>
 
   <hr>
   <div class="row">
     <div class="col-sm-12">
+      <div>
+      <h4>Objetivo:</h4>
+      {{experimento.objetivo}}
+        <hr>
+    </div>
+
       <div class="row">
         <div class="col-sm-12">
           <h4>Descripción:</h4>
@@ -71,9 +75,20 @@
           {{experimento.asistentes}}
           <hr>
         </div>
+        <div class="col-sm-12" *ngIf="experimento.protocolos">
+          <h4>Protocolos:</h4>
+          <ul *ngFor="let protocolo of experimento.protocolos">
+            <li>{{protocolo.nombre}}</li>
+          </ul>
+
+          <hr>
+        </div>
         <div class="col-md-4">
     <button [routerLink]="['/proyecto',idProyecto]" target="_self" class="btn btn-primary btn-md" (click)="getProyecto(experimento)">
       agregar
+    </button>
+          <button [routerLink]="[experimento.id,'protocolos']" target="_self" class="btn btn-primary btn-md" (click)="getProyecto(experimento)">
+      asociar protocolo
     </button>
   </div>
       </div>

@@ -14,7 +14,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let protocolo of protocolos" >
+            <tr *ngFor="let protocolo of protocolos" (click)="onSelect(protocolo)" >
                 <td><small>{{ protocolo.nombre }}</small></td>
                 <td>{{ protocolo.fecha }}</td>
                 <td>{{ protocolo.version }}</td>
@@ -24,5 +24,28 @@
 
             </tbody>
         </table>
+      <div class="ibox-content" *ngIf="protocolo.nombre">
+  <h2>{{protocolo.nombre}}</h2>
+
+  <hr>
+  <div class="row">
+    <div class="col-sm-12">
+      <div>
+      <h4>Fecha:</h4>
+      {{protocolo.fecha}}
+        <hr>
+    </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Version:</h4>
+          {{protocolo.version}}
+          <hr>
+        </div>
+
+        <div class="col-md-4">
+    <button  class="btn btn-primary btn-md" (click)="getExperimento()">
+      agregar
+    </button>
     </div>
 </div>

@@ -32,7 +32,6 @@ export class ProyectoService {
 
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions(headers);
-
     return this._http.put(this.url_servicios_proyectos,item,options)
       .map((response:Response) => <Proyecto[]>response.json());
   }
