@@ -21,6 +21,7 @@ from laboratorio.views import ProyectoExperimentoView, ExperimentoProtocolo, Exp
 urlpatterns = [
     url(r'^proyecto/$', ProyectoView.as_view(), name='proyecto'),
     url(r'^proyecto/(?P<id>\d+)/$', ProyectoView().get_por_id, name='proyecto_id'),
+    # Proyecto - Experimento
     url(r'^proyecto/(?P<id_proyecto>\d+)/experimento/$', ProyectoExperimentoView.as_view(),
         name='proyecto_experimento_todos'),
     url(r'^proyecto/(?P<id_proyecto>\d+)/experimento/(?P<id_experimento>\d*)/$', ProyectoExperimentoView.as_view(),
@@ -28,10 +29,12 @@ urlpatterns = [
 
     url(r'^experimento/$', ExperimentoView.as_view(), name='experimento'),
     url(r'^experimento/(?P<id>\d+)/$', ExperimentoView().get_por_id, name='experimento_id'),
-    url(r'^experimento/(?P<id_experimento>\d+)/protocolo/$', ExperimentoProtocolo.as_view(),
-        name='experimento_protocolo_todos'),
-    url(r'^experimento/(?P<id_experimento>\d+)/protocolo/(?P<id_protocolo>\d*)$', ExperimentoProtocolo.as_view(),
-        name='experimento_protocolo'),
+    # Experimento - protocolo
+    # url(r'^experimento/(?P<id_experimento>\d+)/protocolo/$', ExperimentoProtocolo.as_view(),
+    #     name='experimento_protocolo_todos'),
+    # url(r'^experimento/(?P<id_experimento>\d+)/protocolo/(?P<id_protocolo>\d*)$', ExperimentoProtocolo.as_view(),
+    #     name='experimento_protocolo'),
+
     url(r'^protocolo/$', ProtocoloView.as_view(), name='protocolo'),
     url(r'^protocolo/(?P<id>\d+)/$', ProtocoloView().get_por_id, name='protocolo_id'),
     url(r'^protocolo/filtro/(?P<nombre>.+)/$', ProtocoloView().get_por_nombre, name='protocolo_nombre'),
