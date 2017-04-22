@@ -32,8 +32,8 @@ urlpatterns = [
     # Experimento - protocolo
     url(r'^experimento/(?P<id_experimento>\d+)/protocolo/$', ExperimentoProtocoloView.as_view(),
         name='experimento_protocolo_todos'),
-    # url(r'^experimento/(?P<id_experimento>\d+)/protocolo/(?P<id_protocolo>\d*)$', ExperimentoProtocolo.as_view(),
-    #     name='experimento_protocolo'),
+    url(r'^experimento/(?P<id_experimento>\d+)/protocolo/(?P<id_protocolo>\d*)$', ExperimentoProtocoloView.as_view(),
+         name='experimento_protocolo'),
 
     url(r'^protocolo/$', ProtocoloView.as_view(), name='protocolo'),
     url(r'^protocolo/(?P<id>\d+)/$', ProtocoloView().get_por_id, name='protocolo_id'),
