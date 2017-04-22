@@ -1,10 +1,20 @@
 import {Injectable} from "@angular/core";
-import {PROTOCOLOS} from "./protocolo.list";
+import {Http, Response} from "@angular/http";
+import {environment} from "../../../../environments/environment";
+import {Observable} from "rxjs/Observable";
+import 'rxjs/add/operator/map';
+import {Protocolo} from "./protocolo";
 
 
 @Injectable()
 export class ProtocoloService {
-    listarProtocolos() {
-        return Promise.resolve(PROTOCOLOS);
+
+    private url_servicios_protocolo = environment.url_servicios + "protocolo/";
+
+    constructor(private _http: Http) {
+    }
+
+    listarProtocolos():Observable<Protocolo[]> {
+        return this._http.get(this.url_servicios_protocolo).map((response: Response) => <Protocolo[]>response.json());
     }
 }

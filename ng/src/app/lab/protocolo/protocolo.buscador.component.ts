@@ -16,7 +16,7 @@ export class ProtocoloBuscadorComponent {
     }
 
     listarProtocolos() {
-        this._protocoloService.listarProtocolos().then((protocolos: Protocolo[]) => this.protocolos = protocolos);
+        this._protocoloService.listarProtocolos().subscribe((protocolos: Protocolo[]) => this.protocolos = protocolos);
     }
 
     ngOnInit(): any {
