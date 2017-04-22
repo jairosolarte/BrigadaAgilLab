@@ -12,8 +12,8 @@ import {ActivatedRoute} from "@angular/router";
   providers: [ProyectoService, ExperimentoService]
 })
 export class ProyectoAsociarExpComponent implements OnInit {
-  private experimentos: Experimentos[] = [];
-  private experimento: Experimentos[] = [];
+  public experimentos: Experimentos[] = [];
+  public experimento: Experimentos[] = [];
   private idProyecto: string;
   private proyecto: Proyecto[] = [];
 
