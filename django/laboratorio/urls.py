@@ -31,4 +31,5 @@ urlpatterns = [
 
     url(r'^protocolo/$', ProtocoloView.as_view(), name='protocolo'),
     url(r'^protocolo/(?P<id>\d+)/$', ProtocoloView().get_por_id, name='protocolo_id'),
+    url(r'^protocolo/filtro/(?P<nombre>.+)/$', ProtocoloView().get_por_nombre, name='protocolo_nombre'),
 ]
