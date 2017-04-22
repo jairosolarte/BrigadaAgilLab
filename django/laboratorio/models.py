@@ -86,3 +86,15 @@ class Experimento(models.Model):
 
 class Protocolo(models.Model):
     contenido = models.TextField()
+
+
+class ExperimentoProtocolo(models.Model):
+    experimento = models.ForeignKey(Experimento)
+    protocolo = models.ForeignKey(Protocolo)
+    contenido = models.TextField()
+
+
+class ProyectoExperimento(models.Model):
+    proyecto = models.ForeignKey(Proyecto)
+    experimento = models.ForeignKey(Experimento)
+    contenido = models.TextField()
