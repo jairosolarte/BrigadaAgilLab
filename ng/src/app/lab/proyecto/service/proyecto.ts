@@ -1,3 +1,4 @@
+import {Experimentos} from "../../experimento/experimento";
 /**
  * Created by alejandroquintero on 23/03/17.
  */
@@ -9,5 +10,6 @@ export interface Proyecto {
     fecha_creacion: string;
     fecha_inicio: string;
     cientifico_lider: string;
+    experimentos:Experimentos[];
 
 }

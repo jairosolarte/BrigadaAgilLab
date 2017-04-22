@@ -3,4 +3,7 @@ export interface Experimentos{
     experimento: string;
     objetivo: string;
     fecha: string;
+    descripcion:string;
+    insumos:string;
+    asistentes:string;
 }

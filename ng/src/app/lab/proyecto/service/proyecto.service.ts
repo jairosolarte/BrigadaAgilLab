@@ -18,10 +18,16 @@ export class ProyectoService {
   }
 
   nuevoProyecto(form):Observable<Proyecto[]> {
-    console.log(form);
+
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions(headers);
     return this._http.post(this.url_servicios_proyectos,form,options).map((response:Response) => <Proyecto[]>response.json());
+  }
+
+  asociarProyecto(item):Observable<Proyecto[]>{
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions(headers);
+    return this._http.put(this.url_servicios_proyectos,item,options).map((response:Response) => <Proyecto[]>response.json());
   }
 
   eliminarProyecto() {
