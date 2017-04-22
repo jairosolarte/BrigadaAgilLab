@@ -1,4 +1,5 @@
 # coding=utf-8
+from django.views import View
 
 from laboratorio.models import Experimento
 from laboratorio.views import ContenidoJsonBaseView
@@ -7,3 +8,7 @@ from laboratorio.views import ContenidoJsonBaseView
 class ExperimentoView(ContenidoJsonBaseView):
     def __init__(self):
         self.model = Experimento
+
+
+class ExperimentoProtocolo(View):
+    pass

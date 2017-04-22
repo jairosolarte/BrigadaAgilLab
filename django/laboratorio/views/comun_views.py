@@ -7,14 +7,22 @@ from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 
 
-class ContenidoJsonBaseView(View):
-    def __init__(self, model):
-        View.__init__(self)
-        self.model = model
+def contenido_valido(contenido_json):
+    if contenido_json:
+        json.loads(contenido_json)
+        return contenido_json
+    else:
+        return "{}"
 
+
+class CsrfExemptView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
-        return super(ContenidoJsonBaseView, self).dispatch(request, *args, **kwargs)
+        return super(CsrfExemptView, self).dispatch(request, *args, **kwargs)
+
+
+class ContenidoJsonBaseView(CsrfExemptView):
+    model = None
 
     def get(self, request, *args, **kwargs):
         contenido_modelo = self.model.objects.values('contenido')
