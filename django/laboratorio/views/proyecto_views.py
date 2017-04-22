@@ -15,9 +15,12 @@ class ProyectoView(ContenidoJsonBaseView):
 
 class ProyectoExperimentoView(CsrfExemptView):
     def get(self, request, id_proyecto=None, *args, **kwargs):
-        contenido_modelo = Experimento.objects.filter(proyectoexperimento__proyecto_id__exact=id_proyecto).values(
-            "contenido")
-        lista = map(lambda x: json.loads(x["contenido"]), contenido_modelo)
+        contenido_modelo = ProyectoExperimento.objects.filter(proyecto__id=id_proyecto).values("experimento__contenido",
+                                                                                               "contenido")
+        lista = map(
+            lambda elem:
+            {'experimento': json.loads(elem["experimento__contenido"]), 'progreso': json.loads(elem["contenido"])},
+            contenido_modelo)
         return HttpResponse(json.dumps(lista), content_type="application/json")
 
     def post(self, request, id_proyecto=None, id_experimento=None, *args, **kwargs):
@@ -26,9 +29,16 @@ class ProyectoExperimentoView(CsrfExemptView):
 
         modelo = ProyectoExperimento(proyecto=Proyecto.objects.get(pk=id_proyecto),
                                      experimento=Experimento.objects.get(pk=id_experimento),
-                                     contenido=contenido_valido(request.body))
+                                     contenido="{}")
+        modelo.save()
+        modelo.contenido = contenido_valido(request.body);
         modelo.save()
         return HttpResponse(request.body, content_type="application/json")
 
-    def put(self, request, *args, **kwargs):
-        pass
+    def put(self, request, id_proyecto=None, id_experimento=None, *args, **kwargs):
+        if id_proyecto is None or id_experimento is None:
+            return HttpResponseServerError('<h1>Server Error (500)</h1>')
+        modelo = ProyectoExperimento.objects.get(proyecto__id=id_proyecto, experimento__id=id_experimento)
+        modelo.contenido = contenido_valido(request.body)
+        modelo.save()
+        return HttpResponse(request.body, content_type="application/json")
