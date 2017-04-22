@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from laboratorio.views import ProyectoExperimentoView, ExperimentoProtocolo, ExperimentoView, ProtocoloView, \
+from .views import ProyectoExperimentoView, ExperimentoProtocolo, ExperimentoView, ProtocoloView, \
     ProyectoView
 
 urlpatterns = [
@@ -29,6 +29,9 @@ urlpatterns = [
 
     url(r'^experimento/$', ExperimentoView.as_view(), name='experimento'),
     url(r'^experimento/(?P<id>\d+)/$', ExperimentoView().get_por_id, name='experimento_id'),
+
+
+
     # Experimento - protocolo
     # url(r'^experimento/(?P<id_experimento>\d+)/protocolo/$', ExperimentoProtocolo.as_view(),
     #     name='experimento_protocolo_todos'),

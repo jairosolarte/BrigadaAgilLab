@@ -1,8 +1,7 @@
 # coding=utf-8
 from django.views import View
-
-from laboratorio.models import Experimento
-from laboratorio.views import ContenidoJsonBaseView
+from ..models import Experimento
+from ..views import ContenidoJsonBaseView
 
 
 class ExperimentoView(ContenidoJsonBaseView):

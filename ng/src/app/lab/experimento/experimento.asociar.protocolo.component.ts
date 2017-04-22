@@ -13,10 +13,10 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ExperimentoAsociarProtocoloComponent implements OnInit{
 
- private protocolo:Protocolo[]=[];
- private protocolos:Protocolo[]=[];
- private idExperimento:string;
- private experimento:Experimentos;
+ public protocolo:Protocolo[]=[];
+ public protocolos:Protocolo[]=[];
+ public idExperimento:string;
+ public experimento:Experimentos;
 
   constructor(private _experimentoService:ExperimentoService,
               private _protocoloService:ProtocoloService,

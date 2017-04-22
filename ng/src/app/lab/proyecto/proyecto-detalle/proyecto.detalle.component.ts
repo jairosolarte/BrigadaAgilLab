@@ -15,6 +15,7 @@ export class ProyectoDetalleComponent implements OnInit {
 
   constructor(route: ActivatedRoute, private _proyectoService: ProyectoService) {
     this.idProyecto = route.snapshot.params['id'];
+     this.getProyecto();
 
   }
 
@@ -27,9 +28,12 @@ export class ProyectoDetalleComponent implements OnInit {
         error => console.log(error),
         () => console.log(this.proyecto));
   }
-
+inicializaVariables(){
+  if (!this.proyecto["experimentos"])
+      this.proyecto["experimentos"] = [];
+  }
   ngOnInit(): any {
-    this.getProyecto();
+this.inicializaVariables();
 
   }
 }

@@ -3,7 +3,7 @@ import json
 
 from django.http import HttpResponse
 
-from laboratorio.views.comun_views import LaboratorioException
+from ..views.comun_views import LaboratorioException
 from ..models import Proyecto, Experimento, ProyectoExperimento
 from ..views import ContenidoJsonBaseView, LaboratorioBaseView
 

@@ -17,6 +17,7 @@ export class ProyectoAsociarExpComponent implements OnInit {
   public idProyecto: string;
   public proyecto: Proyecto[] = [];
 
+
   constructor(private _experimentoService: ExperimentoService,
               private _proyectoService: ProyectoService,
               route: ActivatedRoute) {
@@ -54,8 +55,15 @@ export class ProyectoAsociarExpComponent implements OnInit {
       .asociarProyecto(this.proyecto)
       .subscribe(res => console.log(res));
   }
+  inicializaVariables(){
+  if (!this.proyecto["experimentos"])
+      this.proyecto["experimentos"] = [];
+  if(!this.experimento["experimento"])
+    this.experimento["experimento"]=[];
+  }
 
   ngOnInit(): any {
+    this.inicializaVariables();
     this.getExperimentos();
     window.scrollTo(0, 0);
 
