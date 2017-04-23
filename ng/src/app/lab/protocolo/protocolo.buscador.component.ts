@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnChanges, SimpleChanges, Input } from "@angular/core";
 import {ProtocoloService} from "./service/protocolo.service";
 import {Protocolo} from "./service/protocolo";
 import {OnInit} from "@angular/core";
@@ -8,16 +8,25 @@ import {OnInit} from "@angular/core";
     moduleId: module.id,
     templateUrl: 'protocolo.buscador.component.html'
 })
-export class ProtocoloBuscadorComponent {
+export class ProtocoloBuscadorComponent{
 
     public protocolos: Protocolo[] = [];
-    public nombre: String = "nomb";
+
+    @Input() nombre: string = "";
 
     constructor(private _protocoloService: ProtocoloService) {
     }
 
     listarProtocolos() {
-        this._protocoloService.listarProtocolosFiltradosNombre(this.nombre).subscribe((protocolos: Protocolo[]) => this.protocolos = protocolos);
+        if(this.nombre != ""){
+            this._protocoloService.listarProtocolosFiltradosNombre(this.nombre).subscribe((protocolos: Protocolo[]) => this.protocolos = protocolos);
+        }else{
+            this._protocoloService.listarProtocolos().subscribe((protocolos: Protocolo[]) => this.protocolos = protocolos);
+        }
+    }
+
+    keyup(){
+        this.listarProtocolos();
     }
 
     ngOnInit(): any {

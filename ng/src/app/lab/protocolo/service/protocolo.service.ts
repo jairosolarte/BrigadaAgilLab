@@ -19,7 +19,6 @@ export class ProtocoloService {
         return this._http.get(this.url_servicios_protocolo).map((response: Response) => <Protocolo[]>response.json());
     }
     listarProtocolosFiltradosNombre(nombre):Observable<Protocolo[]> {
-        console.log(this.url_servicios_protocolo_filtro_nombre+nombre)
         return this._http.get(this.url_servicios_protocolo_filtro_nombre+nombre).map((response: Response) => <Protocolo[]>response.json());
     }
 }
