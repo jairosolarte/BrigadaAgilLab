@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {ProyectoService} from "../service/proyecto.service";
 import {Proyecto} from "../service/proyecto";
+import {ExperimentoService} from "../../experimento/experimento.service";
 
 
 @Component({
@@ -13,7 +14,7 @@ export class ProyectoDetalleComponent implements OnInit {
   public proyecto: Proyecto[] = [];
   public show:string;
 
-  constructor(route: ActivatedRoute, private _proyectoService: ProyectoService) {
+  constructor(route: ActivatedRoute, private _proyectoService: ProyectoService, private _experimentoService: ExperimentoService) {
     this.idProyecto = route.snapshot.params['id'];
 
 
@@ -28,6 +29,7 @@ export class ProyectoDetalleComponent implements OnInit {
         error => console.log(error),
         () => this.show="true");
   }
+
 
   ngOnInit(): any {
 this.getProyecto();

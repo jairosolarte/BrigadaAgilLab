@@ -43,7 +43,8 @@ onSelect(item){
       experimento["protocolos"]=[];
     experimento["protocolos"].push(protocolo);
 
-    this._experimentoService.asociarProtocolo(experimento,protocolo).subscribe(res=>console.log(res));
+    this._experimentoService.asociarProtocolo(experimento,protocolo).subscribe(res=>console.log("success"),error=>console.log(error),
+        ()=>window.history.back());
 
   }
 

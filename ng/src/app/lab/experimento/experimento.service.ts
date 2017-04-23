@@ -32,4 +32,10 @@ export class ExperimentoService {
        return this._http.post(this.url_servicios_proyectos+item["id"]+"/protocolo/"+protocolo["id"],item,options).map(response=><Experimentos[]>response.json());
 
     }
+    getProtocolos(item):Observable<Response>{
+       let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions(headers);
+      return this._http.get(this.url_servicios_proyectos+item["id"]+"/protocolo/",options)
+      .map(response=>response.json());
+    }
 }

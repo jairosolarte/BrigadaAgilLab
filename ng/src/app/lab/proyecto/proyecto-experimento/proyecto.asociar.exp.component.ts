@@ -19,6 +19,7 @@ export class ProyectoAsociarExpComponent implements OnInit {
   public show:string;
 
 
+
   constructor(private _experimentoService: ExperimentoService,
               private _proyectoService: ProyectoService,
               route: ActivatedRoute) {
@@ -33,7 +34,9 @@ export class ProyectoAsociarExpComponent implements OnInit {
   }
 
   onSelect(item: Experimentos[]) {
+
     this.experimento = item;
+    this.getProtocolos(item);
     this.show="true";
     window.scroll(0,300);
   }
@@ -57,7 +60,12 @@ export class ProyectoAsociarExpComponent implements OnInit {
       .asociarProyecto(this.proyecto)
       .subscribe(res => console.log(res));
   }
+getProtocolos(item){
 
+   this._experimentoService.getProtocolos(item).subscribe(res=>this.experimento["protocolos"]=res,
+   error=>console.log(error),
+       ()=>console.log(this.experimento));
+}
   ngOnInit(): any {
     this.getExperimentos();
     window.scrollTo(0, 0);

@@ -77,8 +77,8 @@
         </div>
         <div class="col-sm-12" *ngIf="experimento.protocolos">
           <h4>Protocolos:</h4>
-          <ul *ngFor="let protocolo of experimento.protocolos">
-            <li>{{protocolo.nombre}}</li>
+          <ul  *ngFor="let protocolo of experimento.protocolos">
+            <li style="list-style: none">{{protocolo.protocolo.nombre}}</li>
           </ul>
 
           <hr>
