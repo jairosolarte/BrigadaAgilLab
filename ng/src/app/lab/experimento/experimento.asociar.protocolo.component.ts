@@ -27,6 +27,7 @@ this.idExperimento = route.snapshot.params['id'];
 onSelect(item){
     this.protocolo = item;
     this.show="true";
+
 }
  getProtocolos(){
     this._protocoloService.listarProtocolos().subscribe((protocolos:Protocolo[])=>this.protocolos=protocolos);
@@ -50,5 +51,6 @@ onSelect(item){
 
   ngOnInit(){
     this.getProtocolos();
+    window.scrollTo(0, 0);
   }
 }
