@@ -42,4 +42,5 @@ urlpatterns = [
     url(r'^protocolo/$', ProtocoloView.as_view()),
     url(r'^protocolo/(?P<id>\d+)/$', ProtocoloView().get_por_id),
     url(r'^protocolo/filtro/(?P<nombre>.+)/$', ProtocoloView().get_por_nombre),
+    url(r'^proyecto/autocomplete/(?P<nombre>.+)/$', ProyectoView().get_por_name, name='proyecto_name'),
 ]

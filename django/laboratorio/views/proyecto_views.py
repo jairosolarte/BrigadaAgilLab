@@ -12,7 +12,6 @@ class ProyectoView(ContenidoJsonBaseView):
     def __init__(self):
         self.model = Proyecto
 
-
 class ProyectoExperimentoView(LaboratorioBaseView):
     def get(self, request, id_proyecto=None, *args, **kwargs):
         """
@@ -62,3 +61,5 @@ class ProyectoExperimentoView(LaboratorioBaseView):
     def _validar_parametros(id_experimento, id_proyecto):
         if id_proyecto is None or id_experimento is None:
             raise LaboratorioException("Se requiere id_proyecto y id_experimento")
+
+

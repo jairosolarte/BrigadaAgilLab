@@ -31,6 +31,10 @@ import {LabelsService} from "./labels.service";
 import {HttpModule} from "@angular/http";
 import {ProyectoAsociarExpComponent} from "./proyecto/proyecto-experimento/proyecto.asociar.exp.component";
 import {ExperimentoAsociarProtocoloComponent} from "./experimento/experimento.asociar.protocolo.component";
+import {ProyectoGraficaComponent} from './proyecto/proyecto-grafica/proyecto.grafica.component';
+import { ChartsModule } from 'ng2-charts';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { Ng2CompleterModule } from "ng2-completer";
 
 @NgModule({
     imports: [
@@ -44,12 +48,12 @@ import {ExperimentoAsociarProtocoloComponent} from "./experimento/experimento.as
             {path: 'proyecto/:id/experimento', component: ProyectoAsociarExpComponent},
             {path: 'experimento', component: ExperimentoBuscadorComponent},
             {path: 'proyecto/:id/experimento/:id/protocolos',component: ExperimentoAsociarProtocoloComponent}
-
-
-
         ]),
         UIModule,
         HttpModule,
+        ChartsModule,
+        MultiselectDropdownModule,
+        Ng2CompleterModule
     ],
     declarations: [
         ProyectoInformacionBasicaComponent,
@@ -70,7 +74,8 @@ import {ExperimentoAsociarProtocoloComponent} from "./experimento/experimento.as
         ProyectoNuevoComponent,
         ProyectoControladorComponent,
         ProyectoAsociarExpComponent,
-        ExperimentoAsociarProtocoloComponent
+        ExperimentoAsociarProtocoloComponent,
+        ProyectoGraficaComponent
     ],
     exports: [
         NotificacionesComponent,
@@ -85,7 +90,8 @@ import {ExperimentoAsociarProtocoloComponent} from "./experimento/experimento.as
         ProyectoListComponent,
         ProyectoResumenComponent,
         EquiposComponent,
-        InsumosComponent
+        InsumosComponent,
+        ProyectoGraficaComponent
 
     ],
     providers: [

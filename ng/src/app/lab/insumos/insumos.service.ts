@@ -8,6 +8,7 @@ export class InsumosService {
     listInsumos(number:number, search: string, order: string): Insumo[] {
 
         let items: Array<Insumo> = [];
+
         for(var i = 1; i <= number; i++){
             var nombre = 'Insumo ' + i
 
