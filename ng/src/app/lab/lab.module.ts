@@ -1,4 +1,5 @@
 import {NgModule} from "@angular/core";
+import {Ng2BreadcrumbModule, BreadcrumbService} from 'ng2-breadcrumb/ng2-breadcrumb';
 import {ProyectoService} from "./proyecto/service/proyecto.service";
 import {ProtocoloService} from "./protocolo/service/protocolo.service";
 import {MuestraService} from "./muestra/muestra.service";
@@ -36,16 +37,15 @@ import {ExperimentoAsociarProtocoloComponent} from "./experimento/experimento.as
     imports: [
         CommonModule,
         FormsModule,
+        Ng2BreadcrumbModule,
         RouterModule.forChild([
             {path: 'proyecto', component: ProyectoControladorComponent},
             {path: 'proyecto/nuevo', component: ProyectoNuevoComponent},
             {path: 'proyecto/:id', component: ProyectoDetalleComponent},
-            {path: 'protocolo', component: ProtocoloComponent},
             {path: 'proyecto/:id/experimento', component: ProyectoAsociarExpComponent},
-            {path: 'experimento', component: ExperimentoBuscadorComponent},
-            {path: 'proyecto/:id/experimento/:id/protocolos',component: ExperimentoAsociarProtocoloComponent}
-
-
+            {path: 'proyecto/:id/experimento/:id/protocolos', component: ExperimentoAsociarProtocoloComponent},
+            {path: 'protocolo', component: ProtocoloComponent},
+            {path: 'experimento', component: ExperimentoBuscadorComponent}
 
         ]),
         UIModule,
@@ -89,6 +89,7 @@ import {ExperimentoAsociarProtocoloComponent} from "./experimento/experimento.as
 
     ],
     providers: [
+        BreadcrumbService,
         ProyectoService,
         ProtocoloService,
         MuestraService,
@@ -102,5 +103,8 @@ import {ExperimentoAsociarProtocoloComponent} from "./experimento/experimento.as
 
 })
 export class LabModule {
-
+    constructor(private breadcrumbService: BreadcrumbService) {
+        breadcrumbService.addFriendlyNameForRoute('/proyecto', 'Proyectos');
+        breadcrumbService.addFriendlyNameForRoute('/proyecto/nuevo', 'Nuevo Proyecto');
+    }
 }
