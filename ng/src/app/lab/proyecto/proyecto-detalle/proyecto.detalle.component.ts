@@ -6,33 +6,26 @@ import {ExperimentoService} from "../../experimento/experimento.service";
 
 
 @Component({
-  templateUrl: 'proyecto.detalle.component.html',
-  providers: [ProyectoService]
+    templateUrl: 'proyecto.detalle.component.html',
+    providers: [ProyectoService]
 })
 export class ProyectoDetalleComponent implements OnInit {
-  public idProyecto: string;
-  public proyecto: Proyecto[] = [];
-  public show:string;
+    public idProyecto:string;
+    public proyecto:Proyecto;
+    public show:string;
 
-  constructor(route: ActivatedRoute, private _proyectoService: ProyectoService, private _experimentoService: ExperimentoService) {
-    this.idProyecto = route.snapshot.params['id'];
+    constructor(route:ActivatedRoute, private _proyectoService:ProyectoService, private _experimentoService:ExperimentoService) {
+        this.idProyecto = route.snapshot.params['id'];
+    }
 
-
-  }
-
-  getProyecto() {
-    this._proyectoService
-      .getProyectos()
-      .subscribe((proyectos: Proyecto[]) =>
-          this.proyecto = JSON.parse(JSON.stringify(proyectos.filter(p => p.id == parseInt(this.idProyecto))
-            .pop())),
-        error => console.log(error),
-        () => this.show="true");
-  }
+    getProyecto() {
+        console.log("Esto es el id del proyecto: "+this.idProyecto)
+        this.proyecto = this._proyectoService.obtenerPorId(this.idProyecto);
+    }
 
 
-  ngOnInit(): any {
-this.getProyecto();
+    ngOnInit():any {
+        this.getProyecto();
 
-  }
+    }
 }
